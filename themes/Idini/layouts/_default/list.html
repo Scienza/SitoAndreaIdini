@@ -1,0 +1,51 @@
+{{ partial "header.html" . }}
+{{ partial "menu.html" . }}
+{{ partial "list_intestation.html" . }}
+
+<div class="article-list">
+    <div class="container">
+        <div class="row">
+                {{.Content}}
+            </div>
+                
+                {{ range .Pages }}
+                <div class="row">
+                        <div class="col-lg-8 col-md-10 mx-auto">
+                                <div class="post-preview">
+                                  <a href="{{.URL}}">
+                                    <h2 class="post-title">
+                                            {{.Title}}
+                                    </h2>
+                                    <h3 class="post-subtitle">
+                                            {{.Summary}}
+                                    </h3>
+                                  </a>
+                                  <p class="post-meta">Posted {{ if .Params.authors }}by 
+                                        <a href="#">{{ range .Params.authors }}
+                                                {{$.Params.bio}}
+                                                {{ end }}</a>
+                                        {{ end }}
+                                    on {{ dateFormat "Monday, Jan 2, 2006" .Date }}
+                                    {{ if .Params.categories }}in categories: {{range .Params.categories}}<a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}" rel="category">{{ . }}</a> {{end}}{{end}}</p>
+                                
+
+                                {{ with .Params.tags }}
+                                        {{ if .}}
+                                        <p class="post-meta">Posted with tags  
+                                        {{ range $j, $e := . }}
+                                                {{ if $j }}, {{ end }}
+                                                        <a href="{{ "tags/" | absURL }}{{ $e | urlize }}" rel="tag">{{ $e }}</a>
+                                                {{ end }}
+                                        </p>
+                                        {{ end }}
+                                {{ end }}
+                                
+                                
+                                </div>
+                                <hr>
+                </div>
+                </div>
+                {{ end }}
+    </div>
+</div>
+{{ partial "footer.html" . }}

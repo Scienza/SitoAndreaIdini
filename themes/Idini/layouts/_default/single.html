@@ -1,0 +1,16 @@
+
+{{ partial "header.html" . }}
+{{ partial "menu.html" . }}
+{{ partial "article_intestation.html" . }}
+
+<div class="article-container">
+    <div class="container">
+        <div class="article-body">
+            {{ .Content }}
+        </div>
+    </div>
+</div>
+{{ partial "footer.html" . }}
+
+
+

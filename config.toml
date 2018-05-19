@@ -1,0 +1,15 @@
+baseURL = "https://mywebsite/"
+languageCode = "en-gb"
+title = "Andrea Idini"
+
+theme = "Idini"
+
+uglyURLs  = true
+canonifyURLs = true
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[outputFormats.HTML]
+  nougly = true

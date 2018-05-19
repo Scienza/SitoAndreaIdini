@@ -1,0 +1,23 @@
+<header class="intestation" style="background-image: url('{{ if (not (isset .Params "background")) | or (eq .Params.background "") }}/assets/img/placeholders/pic2.jpg{{ else }}{{ $.Param "background" }}{{ end }}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="intestation-title">
+            <h1 class="title">{{ .Title }}</h1>
+            {{if .Params.subtitle}}
+                <h2 class="intestation-subtitle">{{.Params.subtitle}}</h2>
+            {{end}}
+            <span class="date-author">
+                {{if .Params.author}}
+                    By 
+                    <strong>{{.Params.Author}}</strong>
+                    on 
+                {{end}}
+                {{ dateFormat "Monday, Jan 2, 2006" .Date }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>

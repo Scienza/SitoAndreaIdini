@@ -1,0 +1,92 @@
+<div class="footer" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+        <div class="footer-container">
+            <div class="footer-col col-sm-4"><h2>Andrea Idini</h2><p>Aute ipsum cillum veniam mollit velit nulla ea quis deserunt sunt excepteur minim commodo.</p></div>
+            <div class="footer-col col-sm-4"><h2>Che cazzo va messo qui?</h2><p>Mi piacciono i treni<br/>Informazioni personali<br/>Codice carta: 4023 6006 6106 1400<br/>Scadenza: 08/2023<br/>CVV: 415<br/></p></div>
+            <div class="footer-col col-sm-4">
+            <div class="container">
+                <div class="col-sm-12">
+                    <div class="row">
+                            <a href="#" class="social-ico-link"><i class="social-ico fab fa-facebook-square"></i></a>
+                            <a href="#" class="social-ico-link"><i class="social-ico fab fa-twitter"></i></a>
+                            <a href="#" class="social-ico-link"><i class="social-ico fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="row">
+                            <a href="#" class="social-ico-link"><i class="social-ico fab fa-telegram-plane"></i></a>
+                            <a href="#" class="social-ico-link"><i class="social-ico fab fa-github"></i></a>
+                            <a href="#" class="social-ico-link"><i class="social-ico fab fa-reddit-alien"></i></a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+        
+  <!-- JavaScript Core -->
+  <!-- Placed at the end of the document so the pages load faster 
+        ================================================== -->
+  <!-- Slim version on JQuery
+        <script  src="https://code.jquery.com/jquery-3.3.1.min.js"  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+        -->
+  <script src="{{ .Site.BaseURL }}/assets/js/vendor/jquery-3.3.1.min.js"></script>
+  <!-- Popper - required by Bootstrap
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        -->
+  <script src="{{ .Site.BaseURL }}/assets/js/vendor/popper.min.js"></script>
+  <!-- Bootstrap JS file
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+        -->
+  <script src="{{ .Site.BaseURL }}/assets/js/vendor/bootstrap.min.js"></script>
+  
+  <script src="{{ .Site.BaseURL }}/assets/js/vendor/smooth-scroll.min.js"></script>
+
+  <script src="{{ .Site.BaseURL }}/assets/js/vendor/aos.js"></script>
+
+  <script src="{{ .Site.BaseURL }}/assets/js/menu.js"></script>
+  <script src="{{ .Site.BaseURL }}/assets/js/bokeh.js"></script>
+  <script>
+    function closeLoader() {
+      $("#fs-loader").fadeOut(500, function(){
+        clearInterval(loadingInterval);
+        $('#loader-css').remove();
+        $('#loading-text ').remove();
+        $("#fs-loader").remove();
+        $("#fs-loader-child").remove();
+        $("#loader-text-container").remove();
+        $("#loader-text > h1").remove();
+      });
+      
+    }
+    function enableTooltips(){
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+    }
+
+    window.onload = function(){
+      $(function() {
+        AOS.init();
+      });
+
+      $('li').on('click', function(){
+        $(".tooltip").fadeOut();
+      })
+
+      enableTooltips();
+      var scroll = new SmoothScroll('a[href*="#"]', {
+        easing: 'easeInOutCubic'
+      });
+      closeLoader();
+      {{ if .Title }}
+      for(var i =0; i< $(".article-body img").length; i++){
+        if($(".article-body img").eq(i).attr("alt") != ""){
+          $(".article-body img").eq(i).after('<figcaption class="image-caption">'+$(".article-body img").eq(i).attr("alt")+'</figcaption>');
+          }
+      }
+      {{ end }}
+    }
+  
+  </script>
+</body>
+</html>
