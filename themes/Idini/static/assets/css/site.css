@@ -45,7 +45,6 @@ body {
   min-height: 100%;
   box-shadow: inset 0 0 5rem rgba(0,0,0,.5);
   content: "";
-  background-image: url('/assets/img/tmp-cover-placeholder.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

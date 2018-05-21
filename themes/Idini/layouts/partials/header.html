@@ -5,13 +5,13 @@
   <meta name="description" content="Andrea Idini's personal website">
   <meta name="author" content="Pandry">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <link rel="icon" href="{{ .Site.BaseURL }}/assets/imgs/favicon.ico">
+  <link rel="icon" href="{{ .Site.BaseURL }}assets/imgs/favicon.ico">
 
   <title>{{if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
   <!-- Bootstrap core CSS 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   -->
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}/assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}assets/css/vendor/bootstrap.min.css">
   <!-- Custom styles for the website 
     <link href="assets/css/site.css" rel="stylesheet">
     -->
@@ -159,17 +159,17 @@
       document.head.appendChild(file);
     }
     /*First the last!*/
-    loadCSS("{{ .Site.BaseURL }}/assets/css/vendor/bootstrap.min.css");
-    loadCSS("{{ .Site.BaseURL }}/assets/css/vendor/animate.min.css");
-    loadCSS("{{ .Site.BaseURL }}/assets/css/vendor/fa/fa-css/fontawesome-all.min.css");
-    loadCSS("{{ .Site.BaseURL }}/assets/css/vendor/aos.css");
-    loadCSS("{{ .Site.BaseURL }}/assets/css/site.css");
-    loadCSS("{{ .Site.BaseURL }}/assets/css/menu.css");
+    loadCSS("{{ .Site.BaseURL }}assets/css/vendor/bootstrap.min.css");
+    loadCSS("{{ .Site.BaseURL }}assets/css/vendor/animate.min.css");
+    loadCSS("{{ .Site.BaseURL }}assets/css/vendor/fa/fa-css/fontawesome-all.min.css");
+    loadCSS("{{ .Site.BaseURL }}assets/css/vendor/aos.css");
+    loadCSS("{{ .Site.BaseURL }}assets/css/site.css");
+    loadCSS("{{ .Site.BaseURL }}assets/css/menu.css");
     {{if .Title }}
-    loadCSS("{{ .Site.BaseURL }}/assets/css/projects.css");
+    loadCSS("{{ .Site.BaseURL }}assets/css/projects.css");
     {{ end }}
     {{if .Section }}
-    loadCSS("{{ .Site.BaseURL }}/assets/css/projects.css");
+    loadCSS("{{ .Site.BaseURL }}assets/css/projects.css");
     {{ end }}
   </script>
   <!-- -->
