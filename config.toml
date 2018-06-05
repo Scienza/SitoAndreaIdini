@@ -1,4 +1,4 @@
-baseURL = "https://mywebby/"
+baseURL = "http://www.matfys.lth.se/staff/Andrea.Idini/"
 languageCode = "en-gb"
 title = "Andrea Idini"
 
@@ -8,8 +8,8 @@ uglyURLs  = true
 canonifyURLs = true
 
 [taxonomies]
-  tag = "tags"
-  category = "categories"
+  tags = ["idini", "andrea", "professor", "mathematical", "physics", nuclear"]
+  category = "Personal Website"
 
 [outputFormats.HTML]
   nougly = true
