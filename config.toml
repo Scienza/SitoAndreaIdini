@@ -8,7 +8,7 @@ uglyURLs  = true
 canonifyURLs = true
 
 [taxonomies]
-  tags = ["idini", "andrea", "professor", "mathematical", "physics", nuclear"]
+  tags = "idini"
   category = "Personal Website"
 
 [outputFormats.HTML]
