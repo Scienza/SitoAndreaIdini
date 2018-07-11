@@ -28,7 +28,7 @@ After having a good description of the structure of the nucleus, one can conside
 
 Using this two tools one can define a framework to go from first principle nuclear structure to reactions in every nucleus, having the best of both worlds: a 'lightweight' and precise theory of nuclear reactions to understand the nucleus inside us and the sky above us.
 
-![Self Energy processes in nuclear quasiparticles.]("/img/SelfEnergy.png")
+![Self Energy processes in nuclear quasiparticles.](/img/SelfEnergy.png)
 
 Other present and past studies regard the nature of nuclear superfluidity, and [nuclear interactions](https://arxiv.org/abs/1611.09311). Making use of statistical methods and, lately, neural networks (cf. Figure).
 
