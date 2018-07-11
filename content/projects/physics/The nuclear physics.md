@@ -4,7 +4,11 @@ date: 2018-05-06T17:12:41+02:00
 draft: false
 tags: ["Physics"]
 categories: ["Nuclear Physics"]
+background: "/img/partitore.jpg"
 ---
+
+<!-- ![Residual errors on nuclear masses calculated with a ReLU trained shallow neural network.](http://www.phme.it/idini/wp-content/uploads/sites/7/2017/07/ReLU-nuclide-chart-300x225.png) -->
+<iframe width="1024" height="640" src="/img/chart_relu.html" frameborder="0" allowfullscreen></iframe>
 
 In many-body physical theory the description can go from the definition of an interaction between single components to the structure of the system. What makes a whole and separates the components from the aggregate? What are emergent properties, such as collective rigidity so familiar in the world around us, coming from?
 
@@ -16,10 +20,32 @@ Nuclear reactions happen when a projectile proton, neutron or nucleus impinges o
 
 In particular, there is an important question yet to be answered: where the nuclei that form everything come from? There is a nuclear phenomenon, involving the capture of neutrons in a rapid fashion, that generates most of the elements heavier than iron. These are most metals on Earth, including gold. The problem is that since there is no complete theory about neutron capture, it is very difficult to do simulation involving them. Consequently, the astrophysical site of this rapid-process (r-process) is undetermined and scientists are still discussing if gold comes from supernovae or neutron star collisions.
 
-My current personal contribution to this scientific research, mainly consist in joining the study of nuclear structure (how the nucleus is) with nuclear reactions (the dynamical processes that happens when a nucleus or a particle impinges on a nucleus). The overarching aim is to build the theory of nucleus bottom-up, from the components to the nuclear reactions. This is extremely difficult due to the aforementioned problems in our understanding of the nuclear force that binds together the nucleus, and the computing power required to simulate the quantum behaviour of many particles.
+My current personal contribution to this scientific research, mainly consist in joining the study of nuclear structure (how the nucleus is) with nuclear reactions (the dynamical processes that happens when a nucleus or a particle impinges on a nucleus). The overarching aim is to build the [theory of nucleus bottom-up](https://arxiv.org/abs/1612.01478), from the components to the nuclear reactions</a>. This is extremely difficult due to the aforementioned problems in our understanding of the nuclear force that binds together the nucleus, and the computing power required to simulate the quantum behaviour of many particles.
 
 The idea behind this project lies in studying projectile and target separately and effectively. I will calculate the properties of some “key” nuclei with the best microscopic description of the nuclear force and the nuclear dynamics that we know. Then I will extract the relevant information out of this rich description and create an effective interaction which can reproduce the same information with a way lighter calculation. This new effective interaction can be applied on all nuclei, and will be a good approximation of the original microscopic nuclear force.
 
 After having a good description of the structure of the nucleus, one can consider what happens when a projectile impinges on it. The interaction between nucleus and projectile is called optical potential, because it models how the projectile can either be absorbed or deflected, as it happens to a ray of light in a camera lens.
 
 Using this two tools one can define a framework to go from first principle nuclear structure to reactions in every nucleus, having the best of both worlds: a 'lightweight' and precise theory of nuclear reactions to understand the nucleus inside us and the sky above us.
+
+![Self Energy processes in nuclear quasiparticles.]("/img/SelfEnergy.png")
+
+Other present and past studies regard the nature of nuclear superfluidity, and [nuclear interactions](https://arxiv.org/abs/1611.09311). Making use of statistical methods and, lately, neural networks (cf. Figure).
+
+Nuclear superfluidity is given by coupling of neutrons and protons in special states where one particle [moves in opposite time evolution respect to the other](https://arxiv.org/abs/1705.11083). The origin of this effect is given both by the nuclear strong force and by complicated correlations [arising in the nuclear medium](https://arxiv.org/abs/1404.7365). These same correlations [drastically modify the ordinate structure](https://arxiv.org/abs/1504.05335) that is often supposed in nuclear calculations. This impact [nuclear reactions](https://arxiv.org/abs/1404.1317) and other [observables related to the nuclei, such as rotational inertia](https://arxiv.org/abs/1107.0251).
+
+### My main collaborators (in fully randomised order) are
+- **University of Surrey:**
+C. Barbieri, F. Raimondi
+- **University of Lyon:**
+K. Bennaceur
+- **University of Milan and INFN:**
+R. A. Broglia, E. Vigezzi
+- **University of York:**
+J. Dobaczewski, A. Pastore
+- **University of Seville:**
+F. Barranco
+- **University of Darmstadt:**
+G. Martinez-Pinedo
+- **TRIUMF Canadian National Laboratory:**
+P. Navratil
