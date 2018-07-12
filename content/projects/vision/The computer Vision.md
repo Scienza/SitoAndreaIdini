@@ -1,5 +1,5 @@
 ---
-title: "The computer vision"
+title: "Computer Vision"
 date: 2018-05-06T17:12:41+02:00
 draft: false
 tags: ["Bundle Adjustment", "Optimization"]

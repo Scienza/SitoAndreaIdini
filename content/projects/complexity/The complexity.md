@@ -1,5 +1,5 @@
 ---
-title: "The complexity"
+title: "Complex systems"
 date: 2018-05-06T17:12:41+02:00
 draft: false
 subtitle: "I'm a cool subtitle!"
