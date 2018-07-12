@@ -7,12 +7,12 @@ categories: ["Nuclear Physics"]
 background: "/img/partitore.jpg"
 ---
 
-<!-- ![Residual errors on nuclear masses calculated with a ReLU trained shallow neural network.](http://www.phme.it/idini/wp-content/uploads/sites/7/2017/07/ReLU-nuclide-chart-300x225.png) -->
-<iframe width="1024" height="640" src="/img/chart_relu.html" frameborder="0" allowfullscreen></iframe>
-
 In many-body physical theory the description can go from the definition of an interaction between single components to the structure of the system. What makes a whole and separates the components from the aggregate? What are emergent properties, such as collective rigidity so familiar in the world around us, coming from?
 
 A single subatomic particle is a fascinating, but relatively still object. I study how the subatomic particles, neutron and protons, come together in ensembles to form nuclei at the core of everything around us. Investigating the individual particles is particle physics, investigating the grouping of particles is nuclear physics.
+
+<iframe width="1024" height="640" src="/img/chart_relu.html" frameborder="0" allowfullscreen></iframe>
+<figcaption class="image-caption">Residual errors on nuclear masses calculated with a ReLU trained shallow neural network</figcaption>
 
 Nuclear physics is especially difficult since as much as 300 subatomic particles come -and are bound- together by a force we don't completely understand, the nuclear strong force, following the complicated rules of quantum mechanics. Thus, approximations must be employed to make heads of tails of its quantum behaviour, even in supercomputers simulations.
 
