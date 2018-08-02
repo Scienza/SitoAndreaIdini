@@ -500,3 +500,6 @@ main {
 .article-body a{
     color: #007bff;
 }
+#teaching-div {
+    padding-bottom: 32vw;
+}
