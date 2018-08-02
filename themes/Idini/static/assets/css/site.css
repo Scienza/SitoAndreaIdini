@@ -503,3 +503,8 @@ main {
 #teaching-div {
     padding-bottom: 32vw;
 }
+
+#about-me-section .section-desc {
+    margin-top: 50%;
+    transform: translateY(-100%);
+}
