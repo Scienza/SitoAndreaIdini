@@ -492,7 +492,11 @@ main {
   color: #ffffff;
 }
 
+#projects-div {
+    margin-bottom: -18vw;
+    padding-bottom: 26vw;
+}
 
 .article-body a{
-color: #007bff;
+    color: #007bff;
 }
