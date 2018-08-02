@@ -17,7 +17,11 @@
                                             {{.Title}}
                                     </h2>
                                     <h3 class="post-subtitle">
-                                            {{.Summary}}
+                                            {{ if .Params.summary }}
+                                                        {{ .Params.summary }}
+                                            {{ else }}
+                                                        {{.Summary}}
+                                            {{ end }}
                                     </h3>
                                   </a>
                                   <p class="post-meta">Posted {{ if .Params.authors }}by 
