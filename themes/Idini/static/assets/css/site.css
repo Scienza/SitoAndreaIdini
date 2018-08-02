@@ -491,3 +491,8 @@ main {
   font-size: 1.2em;
   color: #ffffff;
 }
+
+
+.article-body a{
+color: #007bff;
+}
