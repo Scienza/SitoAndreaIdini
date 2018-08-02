@@ -491,3 +491,8 @@ main {
   font-size: 1.2em;
   color: #ffffff;
 }
+
+#projects-div {
+    margin-bottom: -18vw;
+    padding-bottom: 26vw;
+}
