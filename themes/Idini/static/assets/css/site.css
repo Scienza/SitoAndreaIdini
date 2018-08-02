@@ -496,3 +496,7 @@ main {
     margin-bottom: -18vw;
     padding-bottom: 26vw;
 }
+
+.article-body a{
+    color: #007bff;
+}
