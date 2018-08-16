@@ -25,12 +25,17 @@
                                     </h3>
                                   </a>
                                   <p class="post-meta">Posted {{ if .Params.authors }}by 
-                                        <a href="#">{{ range .Params.authors }}
-                                                {{$.Params.bio}}
-                                                {{ end }}</a>
+                                        <a href="#">
+                                            {{ range .Params.authors }}
+                                                    {{$.Params.bio}}
+                                            {{ end }}</a>
                                         {{ end }}
-                                    on {{ dateFormat "Monday, Jan 2, 2006" .Date }}
-                                    {{ if .Params.categories }}in categories: {{range .Params.categories}}<a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}" rel="category">{{ . }}</a> {{end}}{{end}}</p>
+                                    
+                                    {{ if .Params.categories }}
+                                      in categories: {{range .Params.categories}}
+                                      <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}" rel="category">{{ . }}</a> 
+                                      {{end}}
+                                    {{end}}</p>
                                 
 
                                 {{ with .Params.tags }}
