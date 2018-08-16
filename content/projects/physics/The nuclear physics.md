@@ -5,6 +5,7 @@ draft: false
 tags: ["Physics"]
 categories: ["Nuclear Physics"]
 background: "/img/partitore.jpg"
+summary: "sticazzi, fisica nucleare!!"
 ---
 
 In many-body physical theory the description can go from the definition of an interaction between single components to the structure of the system. What makes a whole and separates the components from the aggregate? What are emergent properties, such as collective rigidity so familiar in the world around us, coming from?
