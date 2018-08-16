@@ -37,17 +37,6 @@
                                       {{end}}
                                     {{end}}</p>
                                 
-
-                                {{ with .Params.tags }}
-                                        {{ if .}}
-                                        <p class="post-meta">Posted with tags  
-                                        {{ range $j, $e := . }}
-                                                {{ if $j }}, {{ end }}
-                                                        <a href="{{ "tags/" | absURL }}{{ $e | urlize }}" rel="tag">{{ $e }}</a>
-                                                {{ end }}
-                                        </p>
-                                        {{ end }}
-                                {{ end }}
                                 
                                 
                                 </div>
