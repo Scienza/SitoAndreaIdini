@@ -6,6 +6,8 @@ subtitle: "I'm a cool subtitle!"
 tags: ["Economics", "Geography", "Philosophy"]
 categories: ["Complexity"]
 background: "/assets/img/placeholders/pic3.jpg"
+subtitles: "Complex studies of society"
+summary: "It is a varied field of study, related to the use of non-linear equations to describe and understand complex systems. The most interesting complex system is the human society, movement and exploitation of resources has geographical and economical implication. It is possible to use the dynamics of self-organizing systems, to understand the breadth of civilizations. And model cities with maps, automata and agents."
 ---
 
 ### Economics

@@ -4,6 +4,7 @@ date: 2018-05-06T17:12:41+02:00
 draft: false
 tags: ["Bundle Adjustment", "Optimization"]
 categories: ["Computer Vision"]
+subtitles: "Efficient algorithms to make robots see"
 ---
 
 Reconstructing 3D environments from common pictures and videos is one of the fundamental steps towards realising augmented reality and automating transportation. This is known as [the simultaneous localisation and mapping (SLAM)](https://en.wikipedia.org/wiki/Simultaneous_localization_and_mapping) problem.
