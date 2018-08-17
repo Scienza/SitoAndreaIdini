@@ -5,8 +5,8 @@ draft: false
 tags: ["Physics"]
 categories: ["Nuclear Physics"]
 background: "/img/partitore.jpg"
-subtitle: "The atomic nucleus as a many-body system"
-summary: "It is the study of how the subatomic particles, neutron and protons, come together in ensembles to form nuclei at the core of everything around us. Nuclear structure and reactions are the ways it is possible to understand this fundamental component of reality, using the language of quantum mechanics of many-body systems. The study of the atomic nuclei explores the role of the nuclear strong and weak interactions at low energy, and therefore the "ground state" of a large part of the universe."
+subtitles: "The atomic nucleus as a many-body system"
+summary: "It is the study of how the subatomic particles, neutron and protons, come together. The ensables formed are nuclei at the core of everything around us. Nuclear structure and reactions are the ways it is possible to understand these fundamental components of reality, using the language of quantum mechanics of many-body systems. The study of the atomic nuclei explores the role of the nuclear strong and weak interactions at low energy, and therefore the \"ground state\" of a large part of the universe."
 ---
 
 In many-body physical theory the description can go from the definition of an interaction between single components to the structure of the system. What makes a whole and separates the components from the aggregate? What are emergent properties, such as collective rigidity so familiar in the world around us, coming from?
