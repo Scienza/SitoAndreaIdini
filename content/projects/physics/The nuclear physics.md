@@ -1,6 +1,6 @@
 ---
 title: "Nuclear physics"
-date: 2018-05-06T17:12:41+02:00
+date: 2018-08-01T17:12:41+02:00
 draft: false
 tags: ["Physics"]
 categories: ["Nuclear Physics"]
