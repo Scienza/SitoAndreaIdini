@@ -17,10 +17,7 @@ On a more modest (but general) scale my outreach group's list, [ScienzaList](htt
 
 However, this post has a more down-to-earth approach on providing a pragmatical list of tools and software you will end up using, in the day-to-day work as a theoretical physicist and developer of computational software. At variance with string theory, you can practice these sort of skills in the sparetime, and before starting the physics education.
 
-## Table of Contents
-
 - [Theoretical Physics and computers](#theoretical-physics-and-computers)
-    - [Table of Contents](#table-of-contents)
     - [Editorial](#editorial)
         - [Latex](#latex)
         - [Plotting and visualizing](#plotting-and-visualizing)
@@ -31,8 +28,8 @@ However, this post has a more down-to-earth approach on providing a pragmatical 
         - [Library use](#library-use)
     - [Software Carpentry](#software-carpentry)
         - [OS](#os)
-        - [terminal](#terminal)
-        - [version control](#version-control)
+        - [Terminal](#terminal)
+        - [Version Control](#version-control)
         - [`vim` vs `emacs`](#vim-vs-emacs)
         - [Modern IDE](#modern-ide)
         - [Debugger](#debugger)
@@ -82,9 +79,9 @@ Finally, presentation of ideas during conferences and talks is integral part of 
 
 Nowadays programs are a cornerstone almost every aspect of the service and industrial economy. There are many ways and scopes to program, but why does a theoretical physicist program? We physicist formalize our understanding of the world in terms of equations that require calculation. With computers we can compute the results of these calculation for a system that we want study. Doing so, we realize if our equations are a valid representation of the real world or not. To run these computations, we need to code efficient numerical programs, that can give us the answer in finite time, with finite resources.
 
-A scientist is a person which has a particular interest to quantitatively understand some areas of the universe. The practical objective of a scientist making use of computatations, is to build his **code-base**. That is his own "tool-box", which he uses to study the universe. Depending on the physics that he wants to do, this can be more or less difficult, require more of less knowledge of computational machines, and being more or less crucial to his final goal to quantitative understand his favorite slice of universe.
+A scientist is a person which has a particular interest to quantitatively understand some areas of the universe. The practical objective of a scientist making use of computatations, is to build his **code-base**. That is his own "tool-box", which he uses to study the universe. Depending on the physics that he wants to do, this can be more or less difficult, require more of less knowledge of computational machines, and being more or less crucial to his final goal to quantitative understand his favorite slice of universe. The best and most useful codes you shared with the community, and the world. Some of it is published in [Computer Physics Communication](https://www.journals.elsevier.com/computer-physics-communications), where a database of scientific codes since 1969 is available.
 
-Software engineering is the application of design and analysis principles to software production. This is a huge field, and most of the software engineering principles do not naively apply to computational software programmed by physicist since our aims are very specific respect to the broad use of informatics in the information age.
+Software engineering is the application of design and analysis principles to software production. This is a huge field, and most of the software engineering principles do not naively apply to computational software programmed by physicist, since our aims are very specific respect to the broad use of informatics in the information age.
 The old generation of theoretical physics community approached this field as per this quote by prominent computer scientist Dijikstra: _"software engineering has accepted as its charter "How to program if you cannot."_
 
 However, is indisputable that the choices you make in the writing of the code, define the capability, efficiency and mantainability of the software itself. That is, the ability of your _code-base_ to study the universe. That is, the outcome of your work. Therefore, choose wisely.
@@ -111,13 +108,13 @@ This choice depends:
 - on knowledge and time constrains you have.
 - on availablity of previous code and libraries.
 
-A lot of nuclear physics is nowadays in the regime of high-performance computing, but there is a lot of physics to be done with pen-and-paper, or computationally trivial codes. This will impact the choice of language and paradigm.
+A lot of nuclear physics is nowadays in the regime of high-performance computing, but there is a lot of physics to be done with pen-and-paper, or computationally trivial codes. This will impact the choice of language and [paradigm](https://en.wikipedia.org/wiki/Programming_paradigm). Most scientific numerical computing happens in imperative programming, where code lines consequentially change the machine state. This can be either procedural, that is based on subroutines/functions, or object-oriented.
 
-In my group the big guns are:
+The languages used in our subcommunity, and in my group:
 
-- Fortran
-- C++
-- python
+- [Fortran](https://en.wikipedia.org/wiki/Fortran): procedural. 
+- [C++](https://en.wikipedia.org/wiki/C%2B%2B): object-oriented.
+- [python](https://en.wikipedia.org/wiki/Python_(programming_language)): object-oriented high level.
 
 ### Design Patterns
 
@@ -141,12 +138,12 @@ Gang of Four
 - OSX
 - Mac
 
-### terminal
+### Terminal
 
 - .bashrc
 - queue systems
 
-### version control
+### Version Control
 
 ### `vim` vs `emacs`
 
