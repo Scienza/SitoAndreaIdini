@@ -15,32 +15,34 @@ This post wants to provide a good list of the tools of the trade you need to wor
 There are plenty of resources and must read to become a good scientist, and a theoretical physicist in particular, redacted by more qualified people than me. Most famously, the reading list provided by [Gerald 't Hooft](http://www.goodtheorist.science). This list is a prerequisite for any ambitious theoretical physicist.
 On a more modest (but general) scale my outreach group's list, [ScienzaList](https://github.com/Scienza/ScienzaList).
 
-However, this post has a more down-to-earth approach on providing a pragmatical list of tools and software you will end up using, in the day-to-day work as a theoretical physicist and developer of computational software.
+However, this post has a more down-to-earth approach on providing a pragmatical list of tools and software you will end up using, in the day-to-day work as a theoretical physicist and developer of computational software. At variance with string theory, you can practice these sort of skills in the sparetime, and before starting the physics education.
 
 ## Summary
 
 - Editorial
   - [Latex](#Latex)
   - [Plotting and visualizing](#plotting and visualizing)
+- Software Engineering
+  - Languages
+  - Design Patterns
 - Software Carpentry
   - version control
   - `vim` vs `emacs`
   - modern IDE
   - debugger
-- Software Engineering
-  - Languages
 
 ## Editorial
 
+This is the part that comes last in the scientific process, but is the part that absolutely everybody has to go through. As such, I will report it first.
 When you have results you will have to write them up (or, even better, write while gathering results) and share them with the community. To do you will have to do some basic _editorial work_, which include the drafting, proof editing and submission of your manuscript.
 
-The drafting of a manuscript include the writing process in a format accepted by publishers. Despite the fact that _markdown_ is getting traction (and I suggest to use it for quick notes and code documentation), [Latex](#Latex) is the standard in academic publishing.
+The drafting of a manuscript include the writing process in a format accepted by publishers. Despite the fact that _markdown_ is getting traction (I am using it right now to draft this document, and I suggest to use it for quick notes and code documentation), [Latex](#Latex) is the standard in academic publishing.
 
-Numerical results are then usually plotted and visualized in figures
+Numerical results and conceptual schemes are then usually [plotted and visualized](#plotting and visualizing) in figures.
 
 ### Latex
 
-Latex is an opensource editorial system. It is the de-facto standard in academic physics publishing so its learning is *not* optional or up to discussion. Even if you plan to compute everything with your head and fingers, you will have to submit your results through the editorial process with a Latex written manuscript (or pay hefty processing fees).
+Latex is an opensource editorial system. It is the de-facto standard in academic physics publishing so its learning is **not optional** or up to discussion. Even if you plan to compute everything with your head and fingers, you will have to submit your results through the editorial process with a Latex written manuscript (or pay hefty processing fees). Latex documents are beautifully put together and its equation rendering has no peer.
 
 Formally is a markup language, which means that is intended to comment and process documents (like html), but is actually Turing complete. That means that you _can do_ literally anything you can do on a computer, but doesn't mean you _should_. Comments and versioning are better to be handled by [git](#version control). Even though there are several packages for plotting and illustrating directly in Latex, I find them inefficient and poor compared to dedicated [graphical](#plotting and visualizing) solutions.
 
@@ -50,9 +52,46 @@ There are several dedicated IDE for Latex, my absolute favorite is [Kile](https:
 
 ### Plotting and visualizing
 
-gnuplot, matplotlib, inkscape/illustrator, powerpoint/beamer
+There are infinite and infitely evolving tools to graphic design. _Data visualization_ is a field of is own right, that is rapidly expanding as new tools becomes available, and appreciated by larger audiences.
+
+The necessities of a theory scientist are relatively limited, but a lot of exposure can be gained with usage and skill on appropriate tools.
+Most importantly, sometimes insight can be gained just by changing the graphical representation of things. Depends a lot if you are a visually or textually oriented thinker how much you should invest in this section, but is never wasted time.
+
+The basic thing to do is to make your code print-out an ASCII file with the data you want plotted on lines and columns. After that, to use a program which reads the files and graphically shows the output in form of scatterplot or line plot which are the two most common plot types in physics.
+There are [plenty](https://datavizcatalogue.com) of other type of graphical tools that can be used to deliver a message, but familiarize yourself with the basics before "finding your own voice".
+
+Tools commonly used by our community to plot are:
+
+- [gnuplot](http://gnuplot.info): a simple but powerful and quick plotting tool. I use it for quickly visualizing results, but rarely for production anymore. Simply `pl 'filename' u column_x:column_y` for a scatter plot, substituting `column_x` and `column_y` the number of column in `'filename'` for x and y (e.g. u 1:2). Add `w l` for a line plot. Repeat after a comma (`pl 'file' u 1:2, 'file' u 1:3`) for multiple column plotting;
+- [matplotlib](https://matplotlib.org): the "new" game in town. Extremely versatile and powerful to use, and nice and modern to view. It is a python library, with many [sublibraries and frameworks](https://blog.modeanalytics.com/python-data-visualization-libraries/) in the family. This is what I mostly use today.
+- xmgrace: the "old" game in town. Stunning results, but limited in versatility and ease to use.
+
+After plotting, you might need to edit (not the data!). To do so a _vectorial editor_ is the best choice. Raster editor, like photoshop, work on pixels. Vectorial editors, work on lines and therefore have infinite resolution. These are ideal for data visualization, since it preserve precision in the definition of data (you could jump one pixel up/down in a raster image, but not in a vector image), and editorial quality. Inkscape is the best tool for this job. It is the reference point for vector graphic. It is especially useful to scientists thanks to an embedded latex rendering engine since v 0.48.
+
+Another discussion merits spreadsheet editors (e.g. excel). They are quick and dirty ways with integrated processing and plotting capabilities. I do not suggest to use them for production work, since there is much that can go wrong remaning hidded. But if you have to do, excel is extremely efficient. Gnumeric is the open-source alternative that comes closer.
+
+Finally, presentation of ideas during conferences and talks is integral part of being a scientist. Despite the fact that scientists tend to look at cold facts rather than fancy presentation, keeping presentation clean, simple, and visually appetizing goes a long way in attracting the attention of the audience and thus exposing your research.  A whole post could be dedicated to scientific presentations. In this context, the tool used to make presentation are either beamer (a Latex-based slide template), or powerpoint and its clones. Choose beamer if you want to fill the slide with details and mathematical expressions, use power point for a more visual and minimalistic approach.
+
+## Software Engineering
+
+Software engineering is the application of design and analysis principles to software production.
+The choices you make in the writing of the code, define the capability, efficiency and mantainability of the software itself. That is, the outcome of your work. Therefore, choose wisely.
+
+### Languages
+
+### Design Patterns
+
+- input/output
 
 ## Software Carpentry
+
+[Software carpentry](https://software-carpentry.org) is the put in practice the principles of engineering. That is, the art of making the machine purring at your tune.
+
+- notebooks: 
+
+### OS
+
+### terminal
 
 ### version control
 
@@ -61,7 +100,3 @@ gnuplot, matplotlib, inkscape/illustrator, powerpoint/beamer
 ### Modern IDE
 
 ### Debugger
-
-## Software Engineering
-
-### Languages
