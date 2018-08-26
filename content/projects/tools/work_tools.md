@@ -23,6 +23,7 @@ However, this post has a more down-to-earth approach on providing a pragmatical 
         - [Plotting and visualizing](#plotting-and-visualizing)
     - [Software Engineering for scientists](#software-engineering-for-scientists)
         - [A good scientific program](#a-good-scientific-program)
+        - [Computer Science](#computer-science)
         - [Languages](#languages)
         - [Design Patterns](#design-patterns)
         - [Library use](#library-use)
@@ -98,6 +99,12 @@ Wisely means that every decision should tend to optimize your present and future
 
 [Design patterns](#Design Patterns) might help you to guarantee the repeatability and reusability of the code, so are good principles to study.
 
+### Computer Science
+
+To prepare for scientific programming, is important brush up on the basics of computer science. Data types (arrays, lists, dictionaries ...), algorithms (bisection, hashtable, quicksort, graph traversal ...), numerical anaylsis (numerical derivatives, Gauss-Newton, trapezoid integration ...).
+
+The ultimate source of wisdom are the Knuth volumes "The art of computer programming". Pass by my office if you want to borrow a copy.
+
 ### Languages
 
 After the algorithm and the physics, the choice of language is the biggest design decision for the writing of a code. It will impact the future re-runnability, performance, and reusability within and outside of your code-base.
@@ -110,11 +117,13 @@ This choice depends:
 
 A lot of nuclear physics is nowadays in the regime of high-performance computing, but there is a lot of physics to be done with pen-and-paper, or computationally trivial codes. This will impact the choice of language and [paradigm](https://en.wikipedia.org/wiki/Programming_paradigm). Most scientific numerical computing happens in imperative programming, where code lines consequentially change the machine state. This can be either procedural, that is based on subroutines/functions, or object-oriented.
 
-The languages used in our subcommunity, and in my group:
+Only Fortran and C++ are fully supported in high performance computing, with direct embeddings in MPI, openMP and cuda. Therefore, the languages generally used in our subcommunity, and in my group:
 
-- [Fortran](https://en.wikipedia.org/wiki/Fortran): procedural. 
-- [C++](https://en.wikipedia.org/wiki/C%2B%2B): object-oriented.
-- [python](https://en.wikipedia.org/wiki/Python_(programming_language)): object-oriented high level.
+- [Fortran](https://en.wikipedia.org/wiki/Fortran): procedural. One of the first compiled laguages, first appeared in 1957 is still going strong in the scientific community. Is very easy to learn, easy to master, and keep you focus on what matter: the algorithms. [Hosphe](http://cpc.cs.qub.ac.uk/summaries/AEGK_v1_0.html) is written in this language, together with the most efficient linear algebra library, LAPACK (and its massive computing version, ScaLAPACK). [Tutorials](http://fortranwiki.org/fortran/show/Tutorials).
+- [C++](https://en.wikipedia.org/wiki/C%2B%2B): object-oriented++. First appeared in 1985 and constantly updated (C++17 being the last revision). Many modern codes are based on C++ (sometimes with bindings to Fortran, as in [BoccaDorata](http://personal.ph.surrey.ac.uk/~cb0023/bcdor/bcdor/Comp_Many-Body_Phys.html)). It is an extremely powerful and versatile language, with the potential to support every programming paradigm. Has the considerable advantage of defining objects with properties and overload operation (e.g. a wavefunction, with its over a basis and a definition of inner product).[Official Tutorial](http://www.cplusplus.com/doc/tutorial/), [List](https://hackr.io/tutorials/learn-c-plus-plus).
+- [python](https://en.wikipedia.org/wiki/Python_(programming_language)): object-oriented high level. Python is the "new" kid getting a lot of traction. It is an intuitive object oriented programming. In python everything is an object, everything is implicit, this makes python very versatile and easy to use. There is a wealth of libraries, for every scope. Important for us, and not as easily available in the other two languages, is visualization. [Official Tutorial](https://docs.python.org/3/tutorial/), [The hard way](https://learncodethehardway.org/python/).
+
+An example of a complex computing application, can be a code that diagonalizes an Hamiltonian to obtain the eigenstates of a system. A istance of python could elaborate input, through a parser and reading, and outputs, writing on file and handling the [matplotlib visualization](#plotting-and-visualizing). This will call a C++ code, where classes define the wavefunctions, basis states...etc... that carries the actual physical content, while the diagonalization itself on a cluster is handled through Fortran and ScaLAPACK.
 
 ### Design Patterns
 
@@ -131,6 +140,8 @@ Gang of Four
 [Software carpentry](https://software-carpentry.org) is the put in practice the principles of engineering. That is, the art of making the machine purring at your tune.
 
 - notebooks: 
+- Gamified Learning:
+[Hackerrank](https://www.hackerrank.com), [Code Academy](https://www.codecademy.com), [Enki](https://www.enki.com)
 
 ### OS
 
