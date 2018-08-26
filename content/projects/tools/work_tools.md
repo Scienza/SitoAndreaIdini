@@ -17,30 +17,32 @@ On a more modest (but general) scale my outreach group's list, [ScienzaList](htt
 
 However, this post has a more down-to-earth approach on providing a pragmatical list of tools and software you will end up using, in the day-to-day work as a theoretical physicist and developer of computational software. At variance with string theory, you can practice these sort of skills in the sparetime, and before starting the physics education.
 
-## Summary
+## Table of Contents
 
-- Editorial
-  - [Latex](# Latex)
-  - [Plotting and visualizing](#plotting and visualizing)
-- Software Engineering
-  - A good scientific program
-  - Languages
-  - Design Patterns
-  - Library
-- Software Carpentry
-  - OS
-  - terminal
-  - version control
-  - `vim` vs `emacs`
-  - modern IDE
-  - debugger
+- [Theoretical Physics and computers](#theoretical-physics-and-computers)
+    - [Table of Contents](#table-of-contents)
+    - [Editorial](#editorial)
+        - [Latex](#latex)
+        - [Plotting and visualizing](#plotting-and-visualizing)
+    - [Software Engineering for scientists](#software-engineering-for-scientists)
+        - [A good scientific program](#a-good-scientific-program)
+        - [Languages](#languages)
+        - [Design Patterns](#design-patterns)
+        - [Library use](#library-use)
+    - [Software Carpentry](#software-carpentry)
+        - [OS](#os)
+        - [terminal](#terminal)
+        - [version control](#version-control)
+        - [`vim` vs `emacs`](#vim-vs-emacs)
+        - [Modern IDE](#modern-ide)
+        - [Debugger](#debugger)
 
 ## Editorial
 
 This is the part that comes last in the scientific process, but is the part that absolutely everybody has to go through. As such, I will report it first.
 When you have results you will have to write them up (or, even better, write while gathering results) and share them with the community. To do you will have to do some basic _editorial work_, which include the drafting, proof editing and submission of your manuscript.
 
-The drafting of a manuscript include the writing process in a format accepted by publishers. Despite the fact that _markdown_ is getting traction (I am using it right now to draft this document, and I suggest to use it for quick notes and code documentation), [Latex](#Latex) is the standard in academic publishing.
+The drafting of a manuscript include the writing process in a format accepted by publishers. Despite the fact that _markdown_ is getting traction (I am using it right now to draft this document, and I suggest to use it for quick notes and code documentation), [Latex](#latex) is the standard in academic publishing.
 
 Numerical results and conceptual schemes are then usually [plotted and visualized](#plotting and visualizing) in figures.
 
@@ -109,7 +111,7 @@ This choice depends:
 - on knowledge and time constrains you have.
 - on availablity of previous code and libraries.
 
-A lot of nuclear physics is nowadays in the regime of high-performance computing, but there is a lot of physics to be done with pen-and-paper, or computationally trivial codes.
+A lot of nuclear physics is nowadays in the regime of high-performance computing, but there is a lot of physics to be done with pen-and-paper, or computationally trivial codes. This will impact the choice of language and paradigm.
 
 In my group the big guns are:
 
