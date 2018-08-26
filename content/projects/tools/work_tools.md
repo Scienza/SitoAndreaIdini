@@ -101,9 +101,11 @@ Wisely means that every decision should tend to optimize your present and future
 
 ### Computer Science
 
-To prepare for scientific programming, is important brush up on the basics of computer science. Data types (arrays, lists, dictionaries ...), algorithms (bisection, hashtable, quicksort, graph traversal ...), numerical anaylsis (numerical derivatives, Gauss-Newton, trapezoid integration ...).
+To prepare for scientific programming, is crucial to brush up on the fundamentals of computer science. Together with Latex, this is the other part is **not** optional for a theoretical physicist. The rest you _could_ wing it, or delegate (not that you _should_, or that is the most efficient, but depends on your scientific objective).
 
-The ultimate source of wisdom are the Knuth volumes "The art of computer programming". Pass by my office if you want to borrow a copy.
+Data types (arrays, lists, dictionaries ...), algorithms (bisection, hashtable, quicksort, graph traversal ...), numerical anaylsis (numerical derivatives, Gauss-Newton, trapezoid integration ...). You can find visualization visualizations of the most fundamental algorithms [here]((https://visualgo.net/en).
+
+The ultimate source of wisdom are the Knuth volumes "The art of computer programming". Pass by my office if you want to borrow a copy. More introductory textbooks are:["Introduction to algorithms"](https://mitpress.mit.edu/books/introduction-algorithms-third-edition), ["a first course in numerical methods"](https://www.amazon.com/Numerical-Methods-Computational-Science-Engineering/dp/0898719976/ref=sr_1_1?ie=UTF8&qid=1535323350&sr=8-1&keywords=%22a+first+course+in+numerical+methods%22).
 
 ### Languages
 
@@ -139,9 +141,8 @@ Gang of Four
 
 [Software carpentry](https://software-carpentry.org) is the put in practice the principles of engineering. That is, the art of making the machine purring at your tune.
 
-- notebooks: 
-- Gamified Learning:
-[Hackerrank](https://www.hackerrank.com), [Code Academy](https://www.codecademy.com), [Enki](https://www.enki.com)
+- notebooks: ipython.
+- Gamified Learning: [Hackerrank](https://www.hackerrank.com), [Code Academy](https://www.codecademy.com), [Enki](https://www.enki.com).
 
 ### OS
 
