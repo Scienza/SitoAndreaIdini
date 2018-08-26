@@ -20,12 +20,16 @@ However, this post has a more down-to-earth approach on providing a pragmatical 
 ## Summary
 
 - Editorial
-  - [Latex](#Latex)
+  - [Latex](# Latex)
   - [Plotting and visualizing](#plotting and visualizing)
 - Software Engineering
+  - A good scientific program
   - Languages
   - Design Patterns
+  - Library
 - Software Carpentry
+  - OS
+  - terminal
   - version control
   - `vim` vs `emacs`
   - modern IDE
@@ -72,16 +76,56 @@ Another discussion merits spreadsheet editors (e.g. excel). They are quick and d
 
 Finally, presentation of ideas during conferences and talks is integral part of being a scientist. Despite the fact that scientists tend to look at cold facts rather than fancy presentation, keeping presentation clean, simple, and visually appetizing goes a long way in attracting the attention of the audience and thus exposing your research.  A whole post could be dedicated to scientific presentations. In this context, the tool used to make presentation are either beamer (a Latex-based slide template), or powerpoint and its clones. Choose beamer if you want to fill the slide with details and mathematical expressions, use power point for a more visual and minimalistic approach.
 
-## Software Engineering
+## Software Engineering for scientists
 
-Software engineering is the application of design and analysis principles to software production.
-The choices you make in the writing of the code, define the capability, efficiency and mantainability of the software itself. That is, the outcome of your work. Therefore, choose wisely.
+Nowadays programs are a cornerstone almost every aspect of the service and industrial economy. There are many ways and scopes to program, but why does a theoretical physicist program? We physicist formalize our understanding of the world in terms of equations that require calculation. With computers we can compute the results of these calculation for a system that we want study. Doing so, we realize if our equations are a valid representation of the real world or not. To run these computations, we need to code efficient numerical programs, that can give us the answer in finite time, with finite resources.
+
+A scientist is a person which has a particular interest to quantitatively understand some areas of the universe. The practical objective of a scientist making use of computatations, is to build his **code-base**. That is his own "tool-box", which he uses to study the universe. Depending on the physics that he wants to do, this can be more or less difficult, require more of less knowledge of computational machines, and being more or less crucial to his final goal to quantitative understand his favorite slice of universe.
+
+Software engineering is the application of design and analysis principles to software production. This is a huge field, and most of the software engineering principles do not naively apply to computational software programmed by physicist since our aims are very specific respect to the broad use of informatics in the information age.
+The old generation of theoretical physics community approached this field as per this quote by prominent computer scientist Dijikstra: _"software engineering has accepted as its charter "How to program if you cannot."_
+
+However, is indisputable that the choices you make in the writing of the code, define the capability, efficiency and mantainability of the software itself. That is, the ability of your _code-base_ to study the universe. That is, the outcome of your work. Therefore, choose wisely.
+
+### A good scientific program
+
+Wisely means that every decision should tend to optimize your present and future return on the time investment, and few principles of software engineering help in maximizing this returns. If I can boil it down to one lesson: always program so that the physics will be clear in the output, therefore usable across a framework that reflects your ideas for the field. Try to guarantee the [5R of scientific programming](https://www.frontiersin.org/articles/10.3389/fninf.2017.00069/full), that are:
+
+- re-runnable: the to code stuff has to be runned over the years, not for a single instances. Container tecnology (e.g. docker) can help providing the correct environment for consistently re-runnable code.
+- repeatable: the code has to give consistent results upon re-runs, otherwise it is not deterministic nor scientific.
+- reproducible: Provide enough comments/documentation so that any other party (including the you of 5 years into the future) can use the program and replicate the results without fail.
+- reusabile: the code can be used in different context, providing input to a third code or as routine.
+- replicable: the algorithms used within the code have to be well specifified when you write it up or use it in a paper or a thesis. Provide enough details to make it possible to write the code again, eventually in a different language.
+
+[Design patterns](#Design Patterns) might help you to guarantee the repeatability and reusability of the code, so are good principles to study.
 
 ### Languages
 
+After the algorithm and the physics, the choice of language is the biggest design decision for the writing of a code. It will impact the future re-runnability, performance, and reusability within and outside of your code-base.
+
+This choice depends:
+
+- on the type of software you plan to do, and in general your are prone to do in your caree
+- on knowledge and time constrains you have.
+- on availablity of previous code and libraries.
+
+A lot of nuclear physics is nowadays in the regime of high-performance computing, but there is a lot of physics to be done with pen-and-paper, or computationally trivial codes.
+
+In my group the big guns are:
+
+- Fortran
+- C++
+- python
+
 ### Design Patterns
 
-- input/output
+Gang of Four
+
+### Library use
+
+- Lapack
+- Blas
+- Parser
 
 ## Software Carpentry
 
@@ -91,7 +135,14 @@ The choices you make in the writing of the code, define the capability, efficien
 
 ### OS
 
+- Linux
+- OSX
+- Mac
+
 ### terminal
+
+- .bashrc
+- queue systems
 
 ### version control
 
