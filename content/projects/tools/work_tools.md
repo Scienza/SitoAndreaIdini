@@ -271,7 +271,7 @@ This is way more powerful than simply keeping the old files, because:
 
 There are different version control systems, but the most used in physics is [git](https://homes.cs.washington.edu/~mernst/advice/version-control.html) (jk, the most used is file naming madness, but git comes soon after that).
 
-I suggest students to make a [github student developer account](https://education.github.com/pack), is free, is simple, and you will have private repository while you study. An alternative, if you don't have to work with me, being of course [gitlab](gitlab.com). But I find the github community larger and more active. I have a [github account](https://github.com/AndreaIdini), and an active little [outreach group](https://github.com/Scienza).
+I suggest students to make a [github student developer account](https://education.github.com/pack), is free, is simple, and you will have private repository while you study. An alternative, if you don't have to work with me, being of course [gitlab](gitlab.com). But I find the github community larger and more active. I have a [github account](https://github.com/AndreaIdini), and an active little [outreach group](https://github.com/Scienza). Repository hosts, such as github, often include several features to help with collaborative developement: issue tracking, project management and statistics just to name a few.
 
 Another important modern tool for collaboration, especially to report to your advisors (especially when the advisor is me) are notebooks. Taking the name and inspiration from mathematica's notebook interface, they are documents able to run code within the document itself.
 
@@ -281,7 +281,36 @@ Are an excellent way to register and report your progresses, together with a ver
 
 ### Modern IDE
 
+You can use vim or emacs and live happily forever (especially emacs is very complete). Or even more basic, you can use a notepad editor, like **gedit** and never go beyond the synthax highlighting. There are however more modern (which doesn't mean better) integrated development environments (IDEs) available around.
+
+These modern editors are much more than a notebook under steroids, but include several useful features. From code folding and refactoring, to online visualization of notebooks. Most importantly, graphical debugging.
+
+You should find the editor/IDE that keeps you more focused, and quicker (that usually means pressing the least number of buttons and looking up less time as possible a cheatsheet). If that means something old, or very simple, or very flashy and frowned upon in the serious-ish world of theoretical physics.
+However, there are not that many editors that properly support Fortran:
+
+- **Eclipse** a huge editor, with a new initiative dedicated to scientific computing. Is one of the few (and probably the best) development environment for parallel computing.
+- **Geany** on the other side of the spectrum, slightly more than a notepad. Has one-button build & run, and proper folding of fortran code, which is pretty nice.
+- **Atom** is the most "hackable" editor, that is is customizable and scriptable. Very fun to use and misuse
+- **Visual Studio Code** a pleasant discovery. Is minimal but modern and works well. Has several interesting features, including remote coding sessions. PS: despite being a Microsoft product, it is opensource and totally free to use.
+
 ### Debugger
+
+Soon or later you will have to learn how to debug a code, that it to understand what is wrong with it. Why it crashes or give unexpected results. The (extremely) old fashioned (but popular) way is to insert lines of writing variables. Is effective, but rarely as much as a well-setted debugger.
+
+Debuggers do not need to printout anything particular and presetted, because they register the whole status of the machine. That is, you can see every variable defined in the code up to a _breaking point_ line.
+
+Every _compiler_ has an associated debugger. [Gnu debugger](https://www.tutorialspoint.com/gnu_debugger) `gdb` is the most popular debugger for linux, associated to the `gcc` compiler (and works also in fortran). `lldb` is the "Apple version" associated to `clang` and works only for C/C++.
+
+These debuggers can be used from terminal, but give their best in a proper IDE since is possible to see the machine status at a glance, and inserting breaking points direcly in the editor.
+
+Other than debuggers there are profilers and analysers. Profilers run your code taking notes on the execution time in each subroutine. Code analysers, analyses your code (ether at runtime or through the source code) to find out potential problems.
+
+Other notable debuggers and analysis tools:
+
+- [gprof](https://sourceware.org/binutils/docs/gprof/): a basic profiler you should learn to use.
+- [vampir](www.vampir.eu): profiler for parallel calculations
+- [valgrind](http://valgrind.org): a very complete debugger and analysis tool. Especially proficient to analyse memory and find memory leaks.
+- [sonarqube](https://www.sonarqube.org): a professional and propietary tool, now industry standard.
 
 ## Other resources
 
