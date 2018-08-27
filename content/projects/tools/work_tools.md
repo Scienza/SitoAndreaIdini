@@ -33,10 +33,11 @@ However, this post has a more down-to-earth approach on providing a pragmatical 
         - [OS](#os)
         - [Terminal](#terminal)
         - [bash scripting](#bash-scripting)
-        - [Version Control](#version-control)
         - [`vim` vs `emacs`](#vim-vs-emacs)
+        - [Version Control](#version-control)
         - [Modern IDE](#modern-ide)
         - [Debugger](#debugger)
+    - [Other resources](#other-resources)
 
 ## Editorial
 
@@ -155,7 +156,7 @@ For example:
 
 Equivalent libraries can be easily found for python or other languages.
 
-In general when wanting to do something on a program which is not your own project, try to find other programs or libraries that have done this operation before, and determine the extent in which this is useful for you. Sometimes few minutes of google search saves you a month of developing your own class for a graph.
+In general when wanting to do something on a program which is not your own project, try to find other programs or libraries that have done this operation before, and determine the extent in which this is useful for you. Sometimes few minutes of google and github search saves you a month of developing your own class for a graph.
 
 Finally, Libraries are a staple of high performance computing, since the usage and construction of libraries makes it possible to efficiently run code on platform with radically different architecture, such as massively parallel environment using ScaLAPACK, and GPU graphic cards using cuBLAS.
 
@@ -175,7 +176,7 @@ Embarrassing parallelization is a type of shared-nothing architecture that makes
 - openCL/[openACC](https://en.wikipedia.org/wiki/OpenACC): is an open protocol for parallelization through accelerators. That is additional cards that are included in a computer and have additional (and usually very efficient and abundant and characterized by a high degree of parallelization) processing capability. Today, mostly of these are Graphic Cards, that can be used for efficient computation. [Tutorial](https://www.openacc.org/get-started). Note: consumer graphic cards (Nvidia GeForce, ATI Radeon...) allow for single precision computations, professional and computing dedicated graphic chips (NVidia Quadro and Tesla) are needed for double precision.
 - [Cuda](https://developer.nvidia.com/cuda-zone): is the proprietary Nvidia accelerator. It is the de-facto standard in accelerated application. [Tutorial](https://developer.nvidia.com/how-to-cuda-c-cpp)
 
-This libraries are native of Fortran, C and C++. However, they can be ported to other languages.
+This libraries are native of Fortran, C and C++. However, they can be ported to or embedded in other languages.
 
 For more information, see e.g. [introduction to HPC](https://hpc-carpentry.github.io/hpc-intro/), and the [tutorials at Livermore national laboratory](https://hpc.llnl.gov/training/tutorials).
 
@@ -197,29 +198,56 @@ Moreover, most of the patterns are not useful in scientific calculations. Howeve
 
 ## Software Carpentry
 
-[Software carpentry](https://software-carpentry.org) is the put in practice the principles of engineering. That is, the art of making the machine purring at your tune.
+[Software carpentry](https://software-carpentry.org) is the put in practice the principles of engineering. That is, the art of making the machine purring at your tune. This makes you a more effective developer, saving precious time by the skills and automatisms perfected over the years. Carpentry is not about high level *decisions*, but on low level *execution*.
 
-- notebooks: ipython.
-- Gamified Learning: [Hackerrank](https://www.hackerrank.com), [Code Academy](https://www.codecademy.com), [Enki](https://www.enki.com).
+If engineering is (almost) a science, carpentry is an art. As such it is very particular to your own way of understanding and working. Nobody is in the position to tell you how you should work, but I provide some suggestions and context to some approaches you can use and what tools are most used by the theoretical physics community.
 
 ### OS
 
-- Linux
-- OSX
-- Mac
+The operative system is a crucial part of your working environment, since it is what manages the hardware and software resources on your machine. Nowadays three different systems are routinely used on personal computers: famously Linux, OSX, and Windows.
+
+Due to the development constrains of numerical and high performance software, a [terminal](#terminal) must be integral part of a scientific development environment. Linux is what is used by most theoretical physics departments as provided workstations, and by practically all of modern supercomputers. So, most probably you will have contact with Linux machines sooner or later.
+
+OSX, the operative system of Apple Mac machines, is based on Unix and BSD and therefore shares a lot of similarities with Linux. But maintains the perks of a commercially managed product. Good internet browsing, decent compatibility with Microsoft office, and has an handy pdf editor included. For these reasons is the favourite of many scientists, even though I personally prefer Linux and I find OSX the less reliable of the 3 systems. 
+In the case you plan to use OSX, be sure that the terminal emulator you use is setted on "bash", and install [`brew`](https://brew.sh/) to manage the installation of development packages.
+
+Windows, is not quite as proficient with scientific computing and development as the other two competitor. I heartily discourage to use as a development platform, and you will have to learn the Linux terminal in any case if you run simulations on department workstation and supercomputers. Even though today Windows 10 now includes a full Linux subsystem and related terminal it might be tricky to make [IDE](#ide) work in that environment. That said, the advantages in browsing and office productivity cannot be understated. Windows has been my system of choice for years, together with a VMware virtual machine running Linux.
 
 ### Terminal
 
-- .bashrc
-- queue systems
+The Unix terminal, a.k.a. shell, is your window in the world of computing. You are "close to the metal" as possible, guaranteeing that you understand and have under control on what is going on your machine.
+Is the faster and easiest way to access remote machines, that is something a computational physicist often does to manage and use remote workstations or supercomputers.
+
+It runs on commands. A textual command does an action, e.g. writing `ls` and submitting the command with `enter` shows the list of files. A relatively ["complete list of commands"](https://ss64.com/bash/), and [a concise one](https://www.tldp.org/LDP/abs/html/basic.html). Train to use commands. Note that with `--help` after the command, or `man` before the commands, shows a help.
+
+In supercomputers the queue systems regulate who has access to computational resources in a given moment. You have to study the specific system that the supercomputer uses, but is always in form of terminal commands. Particularly useful and under appreciated command is `nohup` that disconnects a process from the terminal on which is run, like running a program remotely after you log out, that is fundamental to remote calculations.
+
+Furthermore, enable a totally personalized use of your system. Do you want to copy only the files with "out" name, both uppercase and lowercase, a number, and a ".dat" extension? Yes can do: `cp *{OUT,out}*[0-9]*.dat ./directory/`. Imagine that the files are up to GB each, and few thousands... you cannot afford the space to copy everything, neither the time to copy things one by one. Terminal to the rescue! 
+
+**Love the shell**. You can start having fun modifying the `.bashrc` file in the home, that is a bash script, a list of terminal commands that is run at each terminal start.
 
 ### bash scripting
 
-### Version Control
-git
+Bash scripting is concatenating one command after the other in a scripting file, so that the commands are run sequentially.
+It is an extremely important tool, that enable, for example, to run several codes in several directories and collect the output in a single file. [Tutorial](https://linuxconfig.org/bash-scripting-tutorial-for-beginners).
 
 ### `vim` vs `emacs`
+
+Because of the extensive use of the terminal, eventually in remote instances, will be crucial to learn a text editor that works directly on the shell. The two most popular and advanced alternatives are `vim` and `emacs`. Both are extremely powerful, probably are still the most advanced IDE and editor around.
+The two editors have haters and lovers, famously fuelling a feud that stays rampant for generation of scientist. 
+My view is that `vim` is more of an editor. You enter when you want to change some text, you exit to run it. `emacs` more of an IDE, is programmable with LUA and is where you do everything and with enough proficiency could practically substitute the whole terminal.
+
+Pick the one that suits your personality and ideal working environment. Personally, I like `vim` more, because I use it as an editor, and I love `vim` capability to edit buffers of many files at once.
+
+### Version Control
+
+- git
+- notebooks: ipython.
 
 ### Modern IDE
 
 ### Debugger
+
+## Other resources
+
+- Gamified Learning: [Hackerrank](https://www.hackerrank.com), [Code Academy](https://www.codecademy.com), [Enki](https://www.enki.com).
