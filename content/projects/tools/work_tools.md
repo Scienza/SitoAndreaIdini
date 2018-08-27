@@ -34,7 +34,7 @@ However, this post has a more down-to-earth approach on providing a pragmatical 
         - [Terminal](#terminal)
         - [bash scripting](#bash-scripting)
         - [`vim` vs `emacs`](#vim-vs-emacs)
-        - [Version Control](#version-control)
+        - [Version Control and collaboration](#version-control-and-collaboration)
         - [Modern IDE](#modern-ide)
         - [Debugger](#debugger)
     - [Other resources](#other-resources)
@@ -130,6 +130,13 @@ Only Fortran and C++ are fully supported in high performance computing, with dir
 - [python](https://en.wikipedia.org/wiki/Python_(programming_language)): object-oriented high level. Python is the "new" kid getting a lot of traction. It is an intuitive object oriented programming. In python everything is an object, everything is implicit, this makes python very versatile and easy to use. There is a wealth of libraries, for every scope. Important for us, and not as easily available in the other two languages, is visualization. [Official Tutorial](https://docs.python.org/3/tutorial/), [The hard way](https://learncodethehardway.org/python/).
 
 An example of a complex computing application, can be a code that diagonalizes an Hamiltonian to obtain the eigenstates of a system. An instance of python could elaborate input, through a parser and reading, and outputs, writing on file and handling the [matplotlib visualization](#plotting-and-visualizing). This will call a C++ code, where classes define the wavefunctions, basis states...etc... that carries the actual physical content, while the diagonalization itself on a cluster is handled through Fortran and ScaLAPACK.
+
+Declarative languages deserve another chapter. These are languages where you specify the intent, and then the machine decides the order of computation based on the rule you set up. These are often used for things that don't concern numerical computing (e.g. javascript asynchronous programming, cornerstone of modern front-end web development). 
+
+However, there are a number of paradigms which are very effective in science, even though not always for numerical computing.
+
+- [Mathematica](https://www.wolfram.com/mathematica/): it is well known for the almost supernatural capabilities of symbolic programming. Mathematica is able to calculate analytical derivation with relentless precision. It is also useful for the functional programming capabilities. I used it [here](https://pos.sissa.it/204/002/pdf), to calculate beta decay properties of a nucleus falling in a neutron star. It is has been useful to adjust and calculate a complicated expression at different conditions of temperature and pressure.
+- [Haskell](https://www.haskell.org): *the* functional programming language. Some people in nuclear physics use it for metaprogramming (programming something that writes a program). I started but then resorted to C++ nonetheless.
 
 ### Numerical management
 
@@ -237,12 +244,40 @@ Because of the extensive use of the terminal, eventually in remote instances, wi
 The two editors have haters and lovers, famously fuelling a feud that stays rampant for generation of scientist. 
 My view is that `vim` is more of an editor. You enter when you want to change some text, you exit to run it. `emacs` more of an IDE, is programmable with LUA and is where you do everything and with enough proficiency could practically substitute the whole terminal.
 
-Pick the one that suits your personality and ideal working environment. Personally, I like `vim` more, because I use it as an editor, and I love `vim` capability to edit buffers of many files at once.
+Pick the one that suits your personality and ideal working environment. Personally, I like `vim` more, because I use it as an editor, and I love `vim` capability to edit buffers of many files at once. 
 
-### Version Control
+Following the spirit of the two editors, a neat vim tutorial is available at [this link](https://www.openvim.com), while the standard emacs tutorial is launched within emacs (type in emacs `Ctrl-h` followed by `t`.)
 
-- git
-- notebooks: ipython.
+### Version Control and collaboration
+
+Version control is an important part of developing software in a controlled environment. It consists of tracking the versions of a given software in the development stage, but can be a help in the development itself.
+
+You might be accustomed to have several versions of the same document/code. For example:
+> thesis_draft0, thesis_draft1, thesis_draft1.1, thesis_draft2, thesis_draft2a, thesis_draft2.1a, thesis_draft_2b, thesis_draft_2_with_appendix, thesis_final, thesis_draft3_advisor, thesis_final_final, thesis_final_forreal, thesis_printed, thesis_online ...etc...
+
+Version control is that. A version control system makes sure that tracking the versions of your thesis (or a code) does not become the hot mess that is the list above but streamlines into well defined processes.
+
+This is way more powerful than simply keeping the old files, because:
+
+1. You can generate way more versions than copy of files.
+2. This enables you to do more meaningful comparison, try quicker new things, and see what works and what doesn't.
+3. You can tag the version with appropriate descriptions and comments, not only filenames or (if you are very clever, comments in the file).
+4. There are different levels and granularity for the comments:
+    - tags: for stable, progressive, versions (0, 1.0, 1.1 ...);
+    - branches: for different, eventually parallel, branches and stages of development (a, b, with_appendix);
+    - releases: for versions which are shared (advisor, printed, online).
+5. Makes it way easier to collaborate, especially over remote repositories hosting services, such as [github](www.github.com).
+6. most importantly, every version will be consistent with the file available at that stage, e.g. input files, other libraries...etc... helping the _repeatability_ across different versions.
+
+There are different version control systems, but the most used in physics is [git](https://homes.cs.washington.edu/~mernst/advice/version-control.html) (jk, the most used is file naming madness, but git comes soon after that).
+
+I suggest students to make a [github student developer account](https://education.github.com/pack), is free, is simple, and you will have private repository while you study. An alternative, if you don't have to work with me, being of course [gitlab](gitlab.com). But I find the github community larger and more active. I have a [github account](https://github.com/AndreaIdini), and an active little [outreach group](https://github.com/Scienza).
+
+Another important modern tool for collaboration, especially to report to your advisors (especially when the advisor is me) are notebooks. Taking the name and inspiration from mathematica's notebook interface, they are documents able to run code within the document itself.
+
+Jupyter project has recently released an open-source version [Jupyter notebook](https://ipython.org/notebook.html), initially for python (with the iPython name) now supporting kernels of different languages (including C++ and Fortran).
+
+Are an excellent way to register and report your progresses, together with a versioning control system, since it basically guarantees [3 of the 5 Rs](#a-good-scientific-program).
 
 ### Modern IDE
 
