@@ -25,8 +25,8 @@ However, this post has a more down-to-earth approach on providing a pragmatical 
         - [A good scientific program](#a-good-scientific-program)
         - [Computer Science](#computer-science)
         - [Languages](#languages)
-        - [Design Patterns](#design-patterns)
         - [Library use](#library-use)
+        - [Design Patterns](#design-patterns)
     - [Software Carpentry](#software-carpentry)
         - [OS](#os)
         - [Terminal](#terminal)
@@ -127,15 +127,27 @@ Only Fortran and C++ are fully supported in high performance computing, with dir
 
 An example of a complex computing application, can be a code that diagonalizes an Hamiltonian to obtain the eigenstates of a system. A istance of python could elaborate input, through a parser and reading, and outputs, writing on file and handling the [matplotlib visualization](#plotting-and-visualizing). This will call a C++ code, where classes define the wavefunctions, basis states...etc... that carries the actual physical content, while the diagonalization itself on a cluster is handled through Fortran and ScaLAPACK.
 
-### Design Patterns
-
-Gang of Four
-
 ### Library use
 
 - Lapack
 - Blas
 - Parser
+
+### Design Patterns
+
+This is a relatively advanced topic in software engineering. You should practice the other aspects before perfecting this one. The main issue in object oriented programming is to guide the flow of information in development. A good principle is the one of [GRASP](https://en.wikipedia.org/wiki/GRASP_(object-oriented_design)). "information expert": each class has to be constructed to be responsible of a certain element of the calculation, which has to be simple as possible, and have all the ingredient to compute it. In this way you reduce the coupling between elements and increase the cohesion within an element.
+
+[Design patterns](https://en.wikipedia.org/wiki/Software_design_pattern) is a term introduced in the famous book "Design Patterns: Elements of Reusable Object-Oriented Software". The authors are amicably called "Gang of Four" (GoF).
+
+Design patterns are typical structures that get repeated often in code architecture of object-oriented software.
+They are part effective recepies part community standards. That, their use helps boil down a code in elements with defined behaviour, that other programmer can recognize and use to understand your design.
+
+Moreover, most of the patterns are not useful in scientific calculations. However, might be convienient to learn:
+
+- Builder and Factory method, to initialize your objects.
+- Adapter and Decorator, to distribute information within the objects.
+- Iterator, as the word says, a cornerstone for physics calculation (e.g. definition of integral)
+- Strategies and templates, to setup algorithms behaviour within context.
 
 ## Software Carpentry
 
