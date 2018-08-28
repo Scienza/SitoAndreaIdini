@@ -476,6 +476,8 @@ main {
   font-size: 0.8em;
   font-size: x-large;
   line-height: 2.4;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 
