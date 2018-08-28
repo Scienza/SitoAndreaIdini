@@ -5,6 +5,7 @@ draft: false
 tags: ["Bundle Adjustment", "Optimization"]
 categories: ["Computer Vision"]
 subtitles: "Efficient algorithms to make robots see"
+background: "/img/trafalgar.png"
 # summary: ""
 ---
 

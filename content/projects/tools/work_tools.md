@@ -4,7 +4,7 @@ date: 2018-05-06T17:12:41+02:00
 draft: false
 tags: ["Meta", "Carpentry"]
 categories: ["Tools"]
-background: "/assets/img/placeholders/pic3.jpg"
+background: "/img/terminal.png"
 subtitles: "Modern tools to be a theoretical physicist"
 # summary: "This post wants to provide a good list of the tools of the trade you need to work as a theoretical physicist with a computation focus, i.e. in my group."
 ---

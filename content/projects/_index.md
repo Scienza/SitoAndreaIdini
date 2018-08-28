@@ -1,4 +1,4 @@
 ---
-background: "/assets/img/placeholders/pic27.jpg"
-subtitle: "My research and possible thesis projects"
+background: "/img/blackboard.jpg"
+subtitle: "My research and thesis projects"
 ---
