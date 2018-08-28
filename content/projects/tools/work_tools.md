@@ -12,10 +12,12 @@ subtitles: "Modern tools to be a theoretical physicist"
 
 This post wants to provide a good list of the tools of the trade you need to work as a theoretical physicist with a computation focus, i.e. in my group.
 
-There are plenty of resources and must read to become a good scientist, and a theoretical physicist in particular, redacted by more qualified people than me. Most famously, the reading list provided by [Gerald 't Hooft](http://www.goodtheorist.science). This list is a prerequisite for any ambitious theoretical physicist.
+There are plenty of resources and must read to become a good scientist, and a theoretical physicist in particular, redacted by more qualified people than myself. Most famously, the reading list provided by [Gerald 't Hooft](http://www.goodtheorist.science). This list is a prerequisite for any ambitious theoretical physicist.
 On a more modest (but general) scale my outreach group's list, [ScienzaList](https://github.com/Scienza/ScienzaList).
 
-However, this post has a more down-to-earth approach on providing a pragmatical list of tools and software you will end up using, in the day-to-day work as a theoretical physicist and developer of computational software. At variance with string theory, you can practice these sort of skills in the spare time, and before starting the physics education.
+However, this post has a more down-to-earth approach on providing a pragmatical list of tools and software you will end up using, in the day-to-day work as a theoretical physicist and developer of computational software. At variance with string theory, you can practice this sort of skills in the spare time, and eventually before starting the formal physics education.
+
+Is not possible to expect that every item in this checklist is crossed and mastered, this is a wishlist, also for myself. But here you have a (hopefully) useful canvas to build up from.
 
 - [Theoretical Physics and computers](#theoretical-physics-and-computers)
     - [Editorial](#editorial)
@@ -42,7 +44,7 @@ However, this post has a more down-to-earth approach on providing a pragmatical 
 ## Editorial
 
 This is the part that comes last in the scientific process, but is the part that absolutely everybody has to go through. As such, I will report it first.
-When you have results you will have to write them up (or, even better, write while gathering results) and share them with the community. To do you will have to do some basic _editorial work_, which include the drafting, proof editing and submission of your manuscript.
+When you have results you will have to write them up (or, even better, write while gathering results) and share them with the community. To do you will have to do some basic _editorial work_, which includes the drafting, proof editing, and submission of your manuscript.
 
 The drafting of a manuscript include the writing process in a format accepted by publishers. Despite the fact that _markdown_ is getting traction (I am using it right now to draft this document, and I suggest to use it for quick notes and code documentation), [Latex](#latex) is the standard in academic publishing.
 
@@ -154,7 +156,7 @@ Libraries and reuse of code are an important part of efficient development. Good
 
 The scientific community now typically uses linear algebra and scientific libraries, such as LAPACK and BLAS in Fortran. Boost, Eigen, Armadillo are useful scientific libraries of C++. Python makes extensive use of libraries, and is intrinsic in a development of a python code to use them extensively: Numpy, Pandas, scikit-learn, tensorflow, matplotlib are just few examples.
 
-Libraries however can be used for much more than numerical elaboration and graphical visualization. Using libraries simplifies development and implementation
+Libraries however can be used for much more than numerical elaboration and graphical visualization. Using libraries simplifies development and implementation of features.
 For example:
 - [googletest](https://github.com/google/googletest) helps in testing the code containing all the routines you need for comparing numbers and objects, and makes it possible to adopt a [test driven development](https://en.wikipedia.org/wiki/Test-driven_development) approach.
 - [googleflags](https://github.com/google/googletest) helps with defining a parser where you can input properties and option of the program you want to run.
@@ -163,7 +165,7 @@ For example:
 
 Equivalent libraries can be easily found for python or other languages.
 
-In general when wanting to do something on a program which is not your own project, try to find other programs or libraries that have done this operation before, and determine the extent in which this is useful for you. Sometimes few minutes of google and github search saves you a month of developing your own class for a graph.
+In general when considering adding a feature to a program, try to find other programs or libraries that have solved the problem before, and determine the extent in which this is useful for you. Sometimes few minutes of google and github searches saves you a month of developing your own class.
 
 Finally, Libraries are a staple of high performance computing, since the usage and construction of libraries makes it possible to efficiently run code on platform with radically different architecture, such as massively parallel environment using ScaLAPACK, and GPU graphic cards using cuBLAS.
 
@@ -172,31 +174,38 @@ Finally, Libraries are a staple of high performance computing, since the usage a
 When the code is run on massively parallel machines, i.e. supercomputers, is called high performance computing. This is now a subfield of computer science, with plenty of strategy and methods to separate the computing load over different nodes of a cluster and over different processors.
 Basically the main difficulty and engineering choice in the development of a supercomputer code, is the strategy for sharing information between and within nodes of a cluster.
 
-Communicating within different geographical locations, is considerably slower than communicating within nodes of a dataserver (which use a special, and expensive, connection). Communicating between nodes is considerably slower than communicating within a node. Communicating between CPU and accelerator (GPU or Xeon Phi) is considerably slower than between CPU and memory. And communicating between CPU and memory is considerably slower than between the cache and registry level of a CPU. With this in mind, the objective of a computational scientist is to program algorithms that exploit the potential of resources wasting as little time as possible on the bandwidth.
+Communicating between different geographical locations, is considerably slower than communicating within nodes of a dataserver (which use a special, and expensive, connection). 
+Communicating between nodes is considerably slower than communicating within a node. 
+Communicating between CPU and accelerator (GPU or Xeon Phi) is considerably slower than between CPU and memory.
+Finally, communicating between CPU and memory is considerably slower than between the cache and registry level of a CPU. 
+With this in mind, the objective of a computational scientist is to program algorithms that exploit the potential of resources wasting as little time as possible on the bandwidth.
 
-To do so, the memory is divided into chunks, and different memory sharing paradigms are used in a calculation. In a Shared-nothing architecture, each computational node is independent and self-sufficient. To achieve so, the same information is redundantly dispersed in many nodes. On the contrary, in a shared-everything architecture memory is shared, and therefore the same information in the same site is broadcasted and used in the different nodes of computation.
+To do so, the memory is divided into chunks, and different memory sharing paradigms are used in a calculation. In a Shared-nothing architecture, each computational node is independent and self-sufficient. To achieve so, the same information is redundantly dispersed in many computational units. On the contrary, in a shared-everything architecture memory is shared between units, and therefore the same information in the same location is broadcasted and used in the different units of computing.
 
-Embarrassing parallelization is a type of shared-nothing architecture that makes the easiest form of parallelization. It consist of running the same code, with different inputs, on different nodes of computing. The only thing needed for this is a good use of [bash scripting](#bash-scripting) and the queue system. When sharing-_something_ is needed for the computation, one has to send messages to and from different computation nodes. To help juggle this, we use several libraries:
+Embarrassing parallelization is the easiest form of parallelization and a form of shared-nothing architecture. It consist of running the same code, with different inputs, on different nodes of computing. The only thing needed for implementing this is a good use of [bash scripting](#bash-scripting) and eventually the queue system. 
+
+However, to share-_something_ in a computation, one has to send messages to and from different processes and employ a more sophisticated approach. To help managing the processing and memory load for a parallel computation, we use several libraries:
 
 - [MPI](https://en.wikipedia.org/wiki/Message_Passing_Interface): is a protocol of information exchange between shared-nothing nodes, making them less egoist since they now exchange what you explicitly declare. This information exchange is fundamental to run codes on different computing nodes and enables exploiting not only larger processing resources, but also larger memory availability in the sum of the different nodes. However, the shared information will be duplicated. An MPI call spawns several *processes*, that are isolated computational units. Therefore, an MPI program running on a single machine, will have less memory available for the computation in each process. e.g. 16 MPI processes on a 16 core, 128GB memory machine, will generate 1 process per core, with 8 GB of memory each. [Tutorial](https://computing.llnl.gov/tutorials/mpi/).
 - [openMP](https://www.openmp.org/): openMP works on a shared-everything architecture. Therefore it is ideal to be run on a single machine. openMP will spawn several *threads* for a single process that can read the whole memory available. [Tutorial](https://computing.llnl.gov/tutorials/openMP/). *Note*: C++11 and Fortran2003 contain *vectorization* options, that parallelize the code as a naive implementation of openMP would do.
 - openCL/[openACC](https://en.wikipedia.org/wiki/OpenACC): is an open protocol for parallelization through accelerators. That is additional cards that are included in a computer and have additional (and usually very efficient and abundant and characterized by a high degree of parallelization) processing capability. Today, mostly of these are Graphic Cards, that can be used for efficient computation. [Tutorial](https://www.openacc.org/get-started). Note: consumer graphic cards (Nvidia GeForce, ATI Radeon...) allow for single precision computations, professional and computing dedicated graphic chips (NVidia Quadro and Tesla) are needed for double precision.
-- [Cuda](https://developer.nvidia.com/cuda-zone): is the proprietary Nvidia accelerator. It is the de-facto standard in accelerated application. [Tutorial](https://developer.nvidia.com/how-to-cuda-c-cpp)
+- [Cuda](https://developer.nvidia.com/cuda-zone): is the proprietary Nvidia language for implementing computing in its accelerators. It is the de-facto standard in accelerated application. [Tutorial](https://developer.nvidia.com/how-to-cuda-c-cpp).
 
-This libraries are native of Fortran, C and C++. However, they can be ported to or embedded in other languages.
+These libraries are native in Fortran, C and C++. However, they can be ported to or embedded in other languages. This carries an overhead cost, that might be deadly or irrelevant depending on the implementation.
 
 For more information, see e.g. [introduction to HPC](https://hpc-carpentry.github.io/hpc-intro/), and the [tutorials at Livermore national laboratory](https://hpc.llnl.gov/training/tutorials).
 
 ### Design Patterns
 
-This is a relatively advanced topic in software engineering. You should practice the other aspects before perfecting this one. The main issue in object oriented programming is to guide the flow of information in development. A good principle is the one of [GRASP](https://en.wikipedia.org/wiki/GRASP_(object-oriented_design)). "information expert": each class has to be constructed to be responsible of a certain element of the calculation, which has to be simple as possible, and have all the ingredient to compute it. In this way you reduce the coupling between elements and increase the cohesion within an element.
+This is a relatively advanced topic in software engineering. You should practice the other aspects before perfecting this one. The main issue in object oriented programming is to guide the flow of information in development. Objects are "too" versatile and there is a big risk of misusing the freedom given in object oriented languages, transforming development to a resolution of ["dependencies hell"](https://en.wikipedia.org/wiki/Dependency_hell).
+
+A good principle is the one of [GRASP](https://en.wikipedia.org/wiki/GRASP_(object-oriented_design)). It is based on the "information expert": each class has to be constructed to be responsible of a certain element of the calculation, which has to be simple as possible, and have all the ingredient to compute it. In this way you reduce the coupling between elements and increase the cohesion within an element.
 
 [Design patterns](https://en.wikipedia.org/wiki/Software_design_pattern) is a term introduced in the famous book "Design Patterns: Elements of Reusable Object-Oriented Software". The authors are amicably called "Gang of Four" (GoF).
-
 Design patterns are typical structures that get often repeated in code architecture of object-oriented software.
 They are part effective recipes part community standards. That, their use helps boil down a code in elements with defined behaviour, that other programmer can recognize and use to understand your design.
 
-Moreover, most of the patterns are not useful in scientific calculations. However, might be convenient to learn:
+Moreover, I don't find most of the patterns useful in scientific calculations. However, might be convenient to learn:
 
 - Builder and Factory method, to initialize your objects.
 - Adapter and Decorator, to distribute information within the objects.
@@ -211,51 +220,58 @@ If engineering is (almost) a science, carpentry is an art. As such it is very pa
 
 ### OS
 
-The operative system is a crucial part of your working environment, since it is what manages the hardware and software resources on your machine. Nowadays three different systems are routinely used on personal computers: famously Linux, OSX, and Windows.
+The operative system is a crucial part of your working environment, since it is what manages the hardware and software resources on your machine. Nowadays three different systems are routinely used on personal computers. Famously, these are: Linux, OSX, and Windows.
 
 Due to the development constrains of numerical and high performance software, a [terminal](#terminal) must be integral part of a scientific development environment. Linux is what is used by most theoretical physics departments as provided workstations, and by practically all of modern supercomputers. So, most probably you will have contact with Linux machines sooner or later.
 
 OSX, the operative system of Apple Mac machines, is based on Unix and BSD and therefore shares a lot of similarities with Linux. But maintains the perks of a commercially managed product. Good internet browsing, decent compatibility with Microsoft office, and has an handy pdf editor included. For these reasons is the favourite of many scientists, even though I personally prefer Linux and I find OSX the less reliable of the 3 systems. 
-In the case you plan to use OSX, be sure that the terminal emulator you use is setted on "bash", and install [`brew`](https://brew.sh/) to manage the installation of development packages.
+In the case you plan to use OSX, be sure that the terminal emulator you use is setted on "bash", and install [`brew`](https://brew.sh/) to manage the installation and management of development packages.
 
 Windows, is not quite as proficient with scientific computing and development as the other two competitor. I heartily discourage to use as a development platform, and you will have to learn the Linux terminal in any case if you run simulations on department workstation and supercomputers. Even though today Windows 10 now includes a full Linux subsystem and related terminal it might be tricky to make [IDE](#ide) work in that environment. That said, the advantages in browsing and office productivity cannot be understated. Windows has been my system of choice for years, together with a VMware virtual machine running Linux.
 
 ### Terminal
 
-The Unix terminal, a.k.a. shell, is your window in the world of computing. You are "close to the metal" as possible, guaranteeing that you understand and have under control on what is going on your machine.
-Is the faster and easiest way to access remote machines, that is something a computational physicist often does to manage and use remote workstations or supercomputers.
+The Unix terminal, a.k.a. shell, is your window in the world of scientific computing. With the terminal, you are "close to the metal" as possible, guaranteeing that you understand and have under control on what is exactly going on in your machine.
+Is the faster and easiest way to access remote machines. This is something routinely done by computational physicists, to manage and use remote workstations or supercomputers.
 
-It runs on commands. A textual command does an action, e.g. writing `ls` and submitting the command with `enter` shows the list of files. A relatively ["complete list of commands"](https://ss64.com/bash/), and [a concise one](https://www.tldp.org/LDP/abs/html/basic.html). Train to use commands. Note that with `--help` after the command, or `man` before the commands, shows a help.
+The terminal runs on textual commands. A command does an action on your system, e.g. writing `ls` on the terminal shell, and submitting the command with `enter`, shows the list of files in the present directory. A relatively ["complete list of commands"](https://ss64.com/bash/), and [a concise one](https://www.tldp.org/LDP/abs/html/basic.html). Train to use commands and remember the most fundamental (`cd, cp, mv, ln, ls, ssh`). Note that with `--help` after the command, or `man` before the commands, shows a help.
 
-In supercomputers the queue systems regulate who has access to computational resources in a given moment. You have to study the specific system that the supercomputer uses, but is always in form of terminal commands. Particularly useful and under appreciated command is `nohup` that disconnects a process from the terminal on which is run, like running a program remotely after you log out, that is fundamental to remote calculations.
+In supercomputers the queue systems regulate who has access to computational resources in a given moment. You have to study the specific system that the supercomputer uses, but is always in form of terminal commands. A particularly useful and under appreciated command when running calculation remotely is `nohup`. It disconnects a process from the terminal on which is run, enabling you to close the connection while the calculation continues to go on.
 
-Furthermore, enable a totally personalized use of your system. Do you want to copy only the files with "out" name, both uppercase and lowercase, a number, and a ".dat" extension? Yes can do: `cp *{OUT,out}*[0-9]*.dat ./directory/`. Imagine that the files are up to GB each, and few thousands... you cannot afford the space to copy everything, neither the time to copy things one by one. Terminal to the rescue! 
+Furthermore, the terminal enables a totally personalized and versatile use of your system. Do you want to copy only the files with "out" name, both uppercase and lowercase, a number, and a ".dat" extension? Yes can do: `cp *{OUT,out}*[0-9]*.dat ./directory/`. Imagine that the files are up to GB each, and few thousands... you cannot afford the space to copy everything, neither the time to copy things one by one. Terminal to the rescue! 
 
-**Love the shell**. You can start having fun modifying the `.bashrc` file in the home, that is a bash script, a list of terminal commands that is run at each terminal start.
+**Love the shell**. You can start having fun modifying the `.bashrc` file in the home. It is a bash script, a list of terminal commands, that is run at each terminal start.
 
 ### bash scripting
 
 Bash scripting is concatenating one command after the other in a scripting file, so that the commands are run sequentially.
 It is an extremely important tool, that enable, for example, to run several codes in several directories and collect the output in a single file. [Tutorial](https://linuxconfig.org/bash-scripting-tutorial-for-beginners).
 
+Scripting is fundamental for your work as a physicist. Sooner or later you will have to fine-tune your calculation and answer technical, but important, questions such as: is the simulation converged in this space? To do so you have to run several calculations, with different spaces, and see if the quantity you want to simulate is the same over a certain threshold.
+You can do it by hand, and running the calculations one by one. But way more comfortable and efficient to just setup a script that runs everything at a touch of a command, and then checking the results after all the calculations are done.
+
+Bash script, being a concatenation of several commands, is ideally suited for this role. But almost all languages have the possibility of running command lines, therefore can be used as scripting language. You can use different languages to script, according to how complex and computationally intensive one task is, but usually the simpler the better. 
+Bash does the job. You can use Python if you need more flexibility and if you plan to use control cycles (if, loops ...) or plotting results.
+
 ### `vim` vs `emacs`
 
-Because of the extensive use of the terminal, eventually in remote instances, will be crucial to learn a text editor that works directly on the shell. The two most popular and advanced alternatives are `vim` and `emacs`. Both are extremely powerful, probably are still the most advanced IDE and editor around.
-The two editors have haters and lovers, famously fuelling a feud that stays rampant for generation of scientist. 
-My view is that `vim` is more of an editor. You enter when you want to change some text, you exit to run it. `emacs` more of an IDE, is programmable with LUA and is where you do everything and with enough proficiency could practically substitute the whole terminal.
+Because of the extensive use of the terminal, sometimes in remote instances, you will be in the situation where you will like to edit a file without resorting to graphical interface. For this, it will be crucial to learn a text editor that works directly on the shell. The two most popular and advanced alternatives are `vim` and `emacs`. Both are extremely powerful, probably are still the most advanced IDE and editor around.
+The two editors have haters and lovers, famously fuelling a feud that runs rampant involving generations of scientist. 
 
-Pick the one that suits your personality and ideal working environment. Personally, I like `vim` more, because I use it as an editor, and I love `vim` capability to edit buffers of many files at once. 
+My view is that `vim` is more of an editor. You enter when you want to change some text, you exit to compile the code and run it (even though it can be done within `vim`). `emacs` is more of an IDE, where you can do absolutely everything and with enough proficiency could practically substitute the whole terminal. It is even programmable with LUA, guaranteeing absolute personalization.
+
+Pick the one that suits your personality and ideal working environment. Personally, I like `vim` more, because I use it as an editor and appreciate the minimalist but command-like approach of vim bindings. I also love `vim` for its capability to edit buffers of many files at once (`:argdo ...` runs a command for all filed opened, e.g. `vim *.in` for all .in files in a path).
 
 Following the spirit of the two editors, a neat vim tutorial is available at [this link](https://www.openvim.com), while the standard emacs tutorial is launched within emacs (type in emacs `Ctrl-h` followed by `t`.)
 
 ### Version Control and collaboration
 
-Version control is an important part of developing software in a controlled environment. It consists of tracking the versions of a given software in the development stage, but can be a help in the development itself.
+Version control is an important part of developing software in a controlled environment. It consists of tracking the versions of a given software in the development stage, enabling historical searches, collaboration, and different branches of parallel development.
 
-You might be accustomed to have several versions of the same document/code. For example:
+You might be accustomed to have several versions of the same document/code saved in different files. For example:
 > thesis_draft0, thesis_draft1, thesis_draft1.1, thesis_draft2, thesis_draft2a, thesis_draft2.1a, thesis_draft_2b, thesis_draft_2_with_appendix, thesis_final, thesis_draft3_advisor, thesis_final_final, thesis_final_forreal, thesis_printed, thesis_online ...etc...
 
-Version control is that. A version control system makes sure that tracking the versions of your thesis (or a code) does not become the hot mess that is the list above but streamlines into well defined processes.
+Version (out of) control is that. A version control system makes sure that tracking the versions of your thesis (or a code) does not become the hot mess that is the list above, but streamlines into well defined processes.
 
 This is way more powerful than simply keeping the old files, because:
 
@@ -269,39 +285,39 @@ This is way more powerful than simply keeping the old files, because:
 5. Makes it way easier to collaborate, especially over remote repositories hosting services, such as [github](www.github.com).
 6. most importantly, every version will be consistent with the file available at that stage, e.g. input files, other libraries...etc... helping the _repeatability_ across different versions.
 
-There are different version control systems, but the most used in physics is [git](https://homes.cs.washington.edu/~mernst/advice/version-control.html) (jk, the most used is file naming madness, but git comes soon after that).
+There are different version control systems, but the most used in physics is [git](https://homes.cs.washington.edu/~mernst/advice/version-control.html) (jk, the most used is the file naming madness, but git comes just after that).
 
-I suggest students to make a [github student developer account](https://education.github.com/pack), is free, is simple, and you will have private repository while you study. An alternative, if you don't have to work with me, being of course [gitlab](gitlab.com). But I find the github community larger and more active. I have a [github account](https://github.com/AndreaIdini), and an active little [outreach group](https://github.com/Scienza). Repository hosts, such as github, often include several features to help with collaborative developement: issue tracking, project management and statistics just to name a few.
+I suggest students to make a [github student developer account](https://education.github.com/pack), is free, is simple, and you will have private repository while you study. An alternative, if you don't have to work with me, is of course [gitlab](gitlab.com). 
+However, I find the github community larger and more active. I have a [github account](https://github.com/AndreaIdini), and an active little [outreach group](https://github.com/Scienza). Repository hosts, such as github, often include several features to help with collaborative development: issue tracking, project management and statistics just to name a few.
 
 Another important modern tool for collaboration, especially to report to your advisors (especially when the advisor is me) are notebooks. Taking the name and inspiration from mathematica's notebook interface, they are documents able to run code within the document itself.
 
 Jupyter project has recently released an open-source version [Jupyter notebook](https://ipython.org/notebook.html), initially for python (with the iPython name) now supporting kernels of different languages (including C++ and Fortran).
-
 Are an excellent way to register and report your progresses, together with a versioning control system, since it basically guarantees [3 of the 5 Rs](#a-good-scientific-program).
 
 ### Modern IDE
 
-You can use vim or emacs and live happily forever (especially emacs is very complete). Or even more basic, you can use a notepad editor, like **gedit** and never go beyond the synthax highlighting. There are however more modern (which doesn't mean better) integrated development environments (IDEs) available around.
+You can use vim or emacs and live happily forever (especially emacs is very complete). Or even more basic, you can use a notepad editor, like **gedit** and never go beyond the syntax highlighting. There are however modern (which doesn't mean better) integrated development environments (IDEs) around and would be wise to check it out, to be sure that your are using the best tool you can afford.
 
-These modern editors are much more than a notebook under steroids, but include several useful features. From code folding and refactoring, to online visualization of notebooks. Most importantly, graphical debugging.
+These modern editors are much more than a notebook under steroids, but include several useful features. From code folding and refactoring, to live visualization of notebooks. Most importantly, graphical debugging.
 
 You should find the editor/IDE that keeps you more focused, and quicker (that usually means pressing the least number of buttons and looking up less time as possible a cheatsheet). If that means something old, or very simple, or very flashy and frowned upon in the serious-ish world of theoretical physics.
-However, there are not that many editors that properly support Fortran:
+However, there are not that many editors that properly support Fortran and are multiplatform:
 
-- **Eclipse** a huge editor, with a new initiative dedicated to scientific computing. Is one of the few (and probably the best) development environment for parallel computing.
+- **Eclipse** a huge editor, with a new initiative dedicated to [scientific computing](http://www.eclipse.org/downloads/packages/release/photon/rc2/eclipse-ide-scientific-computing). Is one of the few (and probably the best) development environment for parallel computing.
 - **Geany** on the other side of the spectrum, slightly more than a notepad. Has one-button build & run, and proper folding of fortran code, which is pretty nice.
-- **Atom** is the most "hackable" editor, that is is customizable and scriptable. Very fun to use and misuse
+- **Atom** is the most "hackable" editor, that is is customizable and scriptable. Very fun to use and misuse.
 - **Visual Studio Code** a pleasant discovery. Is minimal but modern and works well. Has several interesting features, including remote coding sessions. PS: despite being a Microsoft product, it is opensource and totally free to use.
 
 ### Debugger
 
-Soon or later you will have to learn how to debug a code, that it to understand what is wrong with it. Why it crashes or give unexpected results. The (extremely) old fashioned (but popular) way is to insert lines of writing variables. Is effective, but rarely as much as a well-setted debugger.
+Sooner or later you will have to learn how to debug a code, that it to understand what is wrong with it. Why it crashes or give unexpected results. The (extremely) old fashioned (but popular) way is to insert lines of writing variables. Is effective, but rarely as much as a well-setted debugger.
 
-Debuggers do not need to printout anything particular and presetted, because they register the whole status of the machine. That is, you can see every variable defined in the code up to a _breaking point_ line.
+Debuggers do not need to printout anything particular and pre-setted, because they register the whole status of the machine. That is, you can see every variable defined in the code up to a _breaking point_ line.
 
 Every _compiler_ has an associated debugger. [Gnu debugger](https://www.tutorialspoint.com/gnu_debugger) `gdb` is the most popular debugger for linux, associated to the `gcc` compiler (and works also in fortran). `lldb` is the "Apple version" associated to `clang` and works only for C/C++.
 
-These debuggers can be used from terminal, but give their best in a proper IDE since is possible to see the machine status at a glance, and inserting breaking points direcly in the editor.
+These debuggers can be used from terminal, but give their best in a proper IDE since is possible to see the machine status at a glance, and inserting breaking points directly in the editor.
 
 Other than debuggers there are profilers and analysers. Profilers run your code taking notes on the execution time in each subroutine. Code analysers, analyses your code (ether at runtime or through the source code) to find out potential problems.
 
@@ -310,8 +326,10 @@ Other notable debuggers and analysis tools:
 - [gprof](https://sourceware.org/binutils/docs/gprof/): a basic profiler you should learn to use.
 - [vampir](www.vampir.eu): profiler for parallel calculations
 - [valgrind](http://valgrind.org): a very complete debugger and analysis tool. Especially proficient to analyse memory and find memory leaks.
-- [sonarqube](https://www.sonarqube.org): a professional and propietary tool, now industry standard.
+- [sonarqube](https://www.sonarqube.org): a professional and proprietary tool, now industry standard.
 
 ## Other resources
 
+- [Joel test](https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/)
+- [Competency Matrix](http://sijinjoseph.com/programmer-competency-matrix/)
 - Gamified Learning: [Hackerrank](https://www.hackerrank.com), [Code Academy](https://www.codecademy.com), [Enki](https://www.enki.com).
