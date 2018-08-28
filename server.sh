@@ -1,2 +1,3 @@
 cp -pr public/* ~/www/
-chmod -R 777 ~/www/
+chown -R www-data:www-data ~/www/
+chmod -R 775 ~/www/
