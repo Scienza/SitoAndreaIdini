@@ -8,8 +8,8 @@ uglyURLs  = true
 canonifyURLs = true
 
 [taxonomies]
-  tags = "idini"
-  category = "Personal Website"
+  tag = "tag"
+  category = "categories"
 
 [outputFormats.HTML]
   nougly = true
