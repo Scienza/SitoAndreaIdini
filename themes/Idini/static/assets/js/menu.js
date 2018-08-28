@@ -29,6 +29,20 @@
 });
 })($);
 
+var lastScrollTop = 0;
+$(window).scroll(function(event){
+	if($("#navs").hasClass('active')){
+	   var st = $(this).scrollTop();
+	   if (st > lastScrollTop){
+		   $("#navs").click();
+	   }
+	   lastScrollTop = st;
+	}
+});
+
+
+
+
 /*
       var queue, it = 0;
       for (var a = i; a >= 0; a--) {
