@@ -10,14 +10,18 @@ subtitles: "Modern tools to be a theoretical physicist"
 ---
 # Theoretical Physics and computers
 
-This post wants to provide a good list of the tools of the trade you need to work as a theoretical physicist with a computation focus, i.e. in my group.
+This post wants to provide a good list of the tools of the trade you need to work as a theoretical physicist with a computational focus, i.e. in my group.
 
 There are plenty of resources and must read to become a good scientist, and a theoretical physicist in particular, redacted by more qualified people than myself. Most famously, the reading list provided by [Gerald 't Hooft](http://www.goodtheorist.science). This list is a prerequisite for any ambitious theoretical physicist.
 On a more modest (but general) scale my outreach group's list, [ScienzaList](https://github.com/Scienza/ScienzaList).
 
-However, this post has a more down-to-earth approach on providing a pragmatical list of tools and software you will end up using, in the day-to-day work as a theoretical physicist and developer of computational software. At variance with string theory, you can practice this sort of skills in the spare time, and eventually before starting the formal physics education.
+However, this list has a more down-to-earth approach on providing a pragmatical list of tools and software you will end up using, in the day-to-day work as a theoretical physicist and developer of computational software. At variance with string theory, you can practice this sort of skills in the spare time, and eventually before starting the formal physics education.
 
-Is not possible to expect that every item in this checklist is crossed and mastered, this is a wishlist, also for myself. But here you have a (hopefully) useful canvas to build up from.
+Is not possible to expect that every item here explained is crossed and mastered, this has the spirit of a wishlist, for myself included. It provides a (hopefully) useful canvas to follow and building up from.
+
+> > _If I had five minutes to chop down a tree, I’d spend the first three sharpening my axe._
+> 
+> -Abraham Lincoln, probably apocryphal
 
 - [Theoretical Physics and computers](#theoretical-physics-and-computers)
     - [Editorial](#editorial)
@@ -43,20 +47,20 @@ Is not possible to expect that every item in this checklist is crossed and maste
 
 ## Editorial
 
-This is the part that comes last in the scientific process, but is the part that absolutely everybody has to go through. As such, I will report it first.
-When you have results you will have to write them up (or, even better, write while gathering results) and share them with the community. To do you will have to do some basic _editorial work_, which includes the drafting, proof editing, and submission of your manuscript.
+This is the part that arguably comes last in the scientific process, but is the part that absolutely everybody has to go through. As such, I will report it first.
+When you will have scientific results you will have to write them up (or, even better, write while gathering results) in order to share them with the community in form of thesis or article. To do you will have to do some basic _editorial work_, which includes the drafting, proof editing, and submission of your manuscript.
 
-The drafting of a manuscript include the writing process in a format accepted by publishers. Despite the fact that _markdown_ is getting traction (I am using it right now to draft this document, and I suggest to use it for quick notes and code documentation), [Latex](#latex) is the standard in academic publishing.
+The drafting of a manuscript includes writing in a format accepted by publishers. Despite the fact that _markdown_ is getting traction (I am using it right now to draft this document, and I suggest to use it for quick notes and code documentation), and Microsoft Word is the most common writing software in the private sector, [Latex](#latex) is the standard in academic publishing.
 
 Numerical results and conceptual schemes are then usually [plotted and visualized](#plotting and visualizing) in figures.
 
 ### Latex
 
-Latex is an open-source editorial system. It is the de-facto standard in academic physics publishing so its learning is **not optional** or up to discussion. Even if you plan to compute everything with your head and fingers, you will have to submit your results through the editorial process with a Latex written manuscript (or pay hefty processing fees). Latex documents are beautifully put together and its equation rendering has no peer.
+Latex is an open-source editorial system. It is the de-facto standard in academic physics publishing so its learning is **not optional** or up to discussion. Even if you plan to compute everything with your head and fingers, you will have to submit your elaborations through the editorial process with a Latex written manuscript (or pay hefty processing fees). Latex documents are beautifully put together and its equation rendering has no peer.
 
-Formally is a markup language, which means that is intended to comment and process documents (like html), but is actually Turing complete. That means that you _can do_ literally anything you can do on a computer, but doesn't mean you _should_. Comments and versioning are better to be handled by [git](#version control). Even though there are several packages for plotting and illustrating directly in Latex, I find them inefficient and poor compared to dedicated [graphical](#plotting and visualizing) solutions.
+Formally Latex is a markup language, which means that is intended to comment and process documents (like html), with a syntax that you don't see in the final product (_what you see is what you mean_ type of editor). However, it is actually Turing complete. That means that you _can do_ literally anything you can do on a computer, but doesn't mean you _should_. Comments and versioning are better to be handled by [git](#version-control). Even though there are several packages for plotting and illustrating directly in Latex, I find them inefficient and poor compared to dedicated [graphical](#plotting-and-visualizing) solutions.
 
-[Revtex](https://journals.aps.org/revtex) is the Latex framework used by the american physical society (APS), which is, among other things, the publisher of Physical Review series of journals.
+To be noted, that [Revtex](https://journals.aps.org/revtex) is the Latex framework used by the american physical society (APS), which is, among other things, the publisher of Physical Review series of journals.
 
 There are several dedicated IDE for Latex, my absolute favourite is [Kile](https://kile.sourceforge.io), but [TeXmaker](http://www.xm1math.net/texmaker/index.html) is multiplatform. Note also [overleaf](https://www.overleaf.com), which provides a web based Latex development platform especially suited for collaboration. However, it is based on proprietary software.
 
@@ -103,7 +107,7 @@ Wisely means that every decision should tend to optimize your present and future
 - reusabile: the code can be used in different context, providing input to a third code or as routine.
 - replicable: the algorithms used within the code have to be well specified when you write it up or use it in a paper or a thesis. Provide enough details to make it possible to write the code again, eventually in a different language.
 
-[Design patterns](#Design Patterns) might help you to guarantee the repeatability and reusability of the code, so are good principles to study.
+[Design patterns](#Design Patterns) might help you to guarantee the reproducibilty and reusability of the code, so are good principles to study.
 
 ### Computer Science
 
@@ -158,6 +162,7 @@ The scientific community now typically uses linear algebra and scientific librar
 
 Libraries however can be used for much more than numerical elaboration and graphical visualization. Using libraries simplifies development and implementation of features.
 For example:
+
 - [googletest](https://github.com/google/googletest) helps in testing the code containing all the routines you need for comparing numbers and objects, and makes it possible to adopt a [test driven development](https://en.wikipedia.org/wiki/Test-driven_development) approach.
 - [googleflags](https://github.com/google/googletest) helps with defining a parser where you can input properties and option of the program you want to run.
 - [glogs](https://github.com/google/glog) keeps and writes the record of running, that is, the output with different levels of verbosity and error codes.
@@ -269,7 +274,14 @@ Following the spirit of the two editors, a neat vim tutorial is available at [th
 Version control is an important part of developing software in a controlled environment. It consists of tracking the versions of a given software in the development stage, enabling historical searches, collaboration, and different branches of parallel development.
 
 You might be accustomed to have several versions of the same document/code saved in different files. For example:
-> thesis_draft0, thesis_draft1, thesis_draft1.1, thesis_draft2, thesis_draft2a, thesis_draft2.1a, thesis_draft_2b, thesis_draft_2_with_appendix, thesis_final, thesis_draft3_advisor, thesis_final_final, thesis_final_forreal, thesis_printed, thesis_online ...etc...
+
+{{< highlight text>}}
+thesis_draft0, thesis_draft1, thesis_draft1.1, thesis_draft2,
+thesis_draft2a, thesis_draft2.1a, thesis_draft_2b,
+thesis_draft_2_with_appendix, thesis_final, thesis_draft3_advisor,
+thesis_final_final, thesis_final_forreal,
+thesis_printed, thesis_online ...etc...
+{{< /highlight >}}
 
 Version (out of) control is that. A version control system makes sure that tracking the versions of your thesis (or a code) does not become the hot mess that is the list above, but streamlines into well defined processes.
 
