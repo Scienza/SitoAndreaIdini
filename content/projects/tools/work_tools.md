@@ -8,6 +8,9 @@ background: "/img/terminal.png"
 subtitles: "Modern tools to be a theoretical physicist"
 # summary: "This post wants to provide a good list of the tools of the trade you need to work as a theoretical physicist with a computation focus, i.e. in my group."
 ---
+> > _If I had five minutes to chop down a tree, I’d spend the first three sharpening my axe.
+
+
 # Theoretical Physics and computers
 
 This post wants to provide a good list of the tools of the trade you need to work as a theoretical physicist with a computational focus, i.e. in my group.
@@ -18,10 +21,6 @@ On a more modest (but general) scale my outreach group's list, [ScienzaList](htt
 However, this list has a more down-to-earth approach on providing a pragmatical list of tools and software you will end up using, in the day-to-day work as a theoretical physicist and developer of computational software. At variance with string theory, you can practice this sort of skills in the spare time, and eventually before starting the formal physics education.
 
 Is not possible to expect that every item here explained is crossed and mastered, this has the spirit of a wishlist, for myself included. It provides a (hopefully) useful canvas to follow and building up from.
-
-> > _If I had five minutes to chop down a tree, I’d spend the first three sharpening my axe._
-> 
-> -Abraham Lincoln, probably apocryphal
 
 - [Theoretical Physics and computers](#theoretical-physics-and-computers)
     - [Editorial](#editorial)
@@ -47,8 +46,8 @@ Is not possible to expect that every item here explained is crossed and mastered
 
 ## Editorial
 
-This is the part that arguably comes last in the scientific process, but is the part that absolutely everybody has to go through. As such, I will report it first.
-When you will have scientific results you will have to write them up (or, even better, write while gathering results) in order to share them with the community in form of thesis or article. To do you will have to do some basic _editorial work_, which includes the drafting, proof editing, and submission of your manuscript.
+This part arguably comes last in the scientific process. However, is the part that absolutely everybody has to go through. As such, I will report it first.
+When you will have scientific results you will have to write them up (or, even better, write while gathering results), in order to share them with the community in form of thesis or article. To do you will have to do some basic _editorial work_, which includes the drafting, proof editing, and submission of your manuscript.
 
 The drafting of a manuscript includes writing in a format accepted by publishers. Despite the fact that _markdown_ is getting traction (I am using it right now to draft this document, and I suggest to use it for quick notes and code documentation), and Microsoft Word is the most common writing software in the private sector, [Latex](#latex) is the standard in academic publishing.
 
@@ -56,11 +55,11 @@ Numerical results and conceptual schemes are then usually [plotted and visualize
 
 ### Latex
 
-Latex is an open-source editorial system. It is the de-facto standard in academic physics publishing so its learning is **not optional** or up to discussion. Even if you plan to compute everything with your head and fingers, you will have to submit your elaborations through the editorial process with a Latex written manuscript (or pay hefty processing fees). Latex documents are beautifully put together and its equation rendering has no peer.
+Latex is an open-source editorial system. It is the de-facto standard in academic physics publishing so its learning is **not optional** or up for discussion. Even if you plan to compute everything with your head and fingers, you will have to submit your elaborations through the editorial process with a manuscript written in Latex (or pay hefty processing fees). A positive note to this process, is that Latex documents are beautifully put together and its equation rendering has no peer.
 
-Formally Latex is a markup language, which means that is intended to comment and process documents (like html), with a syntax that you don't see in the final product (_what you see is what you mean_ type of editor). However, it is actually Turing complete. That means that you _can do_ literally anything you can do on a computer, but doesn't mean you _should_. Comments and versioning are better to be handled by [git](#version-control). Even though there are several packages for plotting and illustrating directly in Latex, I find them inefficient and poor compared to dedicated [graphical](#plotting-and-visualizing) solutions.
+Formally Latex is a markup language (e.g. like html). This means that is intended to comment and process documents, with a syntax that you don't see in the final product (_what you see is what you mean_). However, it is actually Turing complete. That means that, in principle, you _could do_ literally anything you can do on a computer, but doesn't mean you _should_. For example, even though there are several packages for plotting and illustrating directly in Latex, I find them inefficient and poor compared to dedicated [graphical](#plotting-and-visualizing) solutions. Comments and versioning are better handled by [git](#version-control), or equivalent methods.
 
-To be noted, that [Revtex](https://journals.aps.org/revtex) is the Latex framework used by the american physical society (APS), which is, among other things, the publisher of Physical Review series of journals.
+To be noted, that [Revtex](https://journals.aps.org/revtex) is the Latex framework used by the american physical society (APS). Among other things, APS is the publisher of Physical Review series of journals.
 
 There are several dedicated IDE for Latex, my absolute favourite is [Kile](https://kile.sourceforge.io), but [TeXmaker](http://www.xm1math.net/texmaker/index.html) is multiplatform. Note also [overleaf](https://www.overleaf.com), which provides a web based Latex development platform especially suited for collaboration. However, it is based on proprietary software.
 
@@ -68,7 +67,7 @@ There are several dedicated IDE for Latex, my absolute favourite is [Kile](https
 
 There are infinite and infinitely evolving tools to graphic design. _Data visualization_ is a field of is own right, that is rapidly expanding as new tools becomes available, and appreciated by larger audiences.
 
-The necessities of a theory scientist are relatively limited, but a lot of exposure can be gained with usage and skill on appropriate tools.
+The necessities of a theory scientist are relatively limited, but a lot of exposure can be gained with skilled use of appropriate tools.
 Most importantly, sometimes insight can be gained just by changing the graphical representation of things. Depends a lot if you are a visually or textually oriented thinker how much you should invest in this section, but is never wasted time.
 
 The basic thing to do is to make your code print-out an ASCII file with the data you want plotted on lines and columns. After that, to use a program which reads the files and graphically shows the output in form of scatterplot or line plot which are the two most common plot types in physics.
@@ -76,24 +75,26 @@ There are [plenty](https://datavizcatalogue.com) of other type of graphical tool
 
 Tools commonly used by our community to plot are:
 
-- [gnuplot](http://gnuplot.info): a simple but powerful and quick plotting tool. I use it for quickly visualizing results, but rarely for production anymore. Simply `pl 'filename' u column_x:column_y` for a scatter plot, substituting `column_x` and `column_y` the number of column in `'filename'` for x and y (e.g. u 1:2). Add `w l` for a line plot. Repeat after a comma (`pl 'file' u 1:2, 'file' u 1:3`) for multiple column plotting;
-- [matplotlib](https://matplotlib.org): the "new" game in town. Extremely versatile and powerful to use, and nice and modern to view. It is a python library, with many [sublibraries and frameworks](https://blog.modeanalytics.com/python-data-visualization-libraries/) in the family. This is what I mostly use today.
-- xmgrace: the "old" game in town. Stunning results, but limited in versatility and ease to use.
+- [gnuplot](http://gnuplot.info): a simple but powerful and quick plotting tool. I use it for quickly visualizing results, but rarely for production anymore. Simply `pl 'filename' u column_x:column_y` for a scatter plot, substituting `column_x` and `column_y` the number of column in `'filename'` for x and y (e.g. u 1:2). Add `w l` for a line plot. Repeat after a comma (`pl 'file' u 1:2, 'file' u 1:3`) for plotting multiple columns to multiple data series;
+- [matplotlib](https://matplotlib.org): the "new" game in town. It is extremely versatile and powerful to use, while nice and modern to view. It is a python library, with many [sublibraries and frameworks](https://blog.modeanalytics.com/python-data-visualization-libraries/) in the family. This is what I mostly use today.
+- xmgrace: the "old" game in town. Provides stunning, standardized results, but it is limited in versatility and ease to use.
 
-After plotting, you might need to edit (not the data!). To do so a _vectorial editor_ is the best choice. Raster editor, like photoshop, work on pixels. Vectorial editors, work on lines and therefore have infinite resolution. These are ideal for data visualization, since it preserve precision in the definition of data (you could jump one pixel up/down in a raster image, but not in a vector image), and editorial quality. Inkscape is the best tool for this job. It is the reference point for vector graphic. It is especially useful to scientists thanks to an embedded latex rendering engine since v 0.48.
+After plotting, you might need to edit (not the data!). To do so a _vectorial editor_ is the best choice. Raster editor, like photoshop, work on pixels. Vectorial editors, work on lines and therefore have infinite resolution. These are ideal for data visualization, since it preserve precision in the definition of data (you could end up jumping one pixel up/down in a raster image, but not in a vector image), and editorial quality. [Inkscape](https://inkscape.org) is the best tool for this job. It is the reference point for vector graphics, and is especially useful to scientists thanks to an embedded latex rendering engine since v 0.48. It is multiplatform but with limited support outside of linux.
 
-Another discussion merits spreadsheet editors (e.g. excel). They are quick and dirty ways with integrated processing and plotting capabilities. I do not suggest to use them for production work, since there is much that can go wrong remaining hidden. But if you have to do, excel is extremely efficient. Gnumeric is the open-source alternative that comes closer.
+Spreadsheet editors (e.g. excel) merit another discussion. They are quick and dirty tools with integrated processing and plotting capabilities. I do not suggest to use them for production work, since there is much that can go wrong remaining hidden. But if you have to do, excel is extremely efficient handling big data tables. Gnumeric is the open-source alternative that comes closer.
 
 Finally, presentation of ideas during conferences and talks is integral part of being a scientist. Despite the fact that scientists tend to look at cold facts rather than fancy presentation, keeping presentation clean, simple, and visually appetizing goes a long way in attracting the attention of the audience and thus exposing your research.  A whole post could be dedicated to scientific presentations. In this context, the tool used to make presentation are either beamer (a Latex-based slide template), or Powerpoint and its clones. Choose beamer if you want to fill the slide with details and mathematical expressions, use power point for a more visual and minimalistic approach.
 
 ## Software Engineering for scientists
 
-Nowadays programs are a cornerstone almost every aspect of the service and industrial economy. There are many ways and scopes to program, but why does a theoretical physicist program? We physicist formalize our understanding of the world in terms of equations that require calculation. With computers we can compute the results of these calculation for a system that we want study. Doing so, we realize if our equations are a valid representation of the real world or not. To run these computations, we need to code efficient numerical programs, that can give us the answer in finite time, with finite resources.
+Nowadays programs are a cornerstone almost every aspect of the service and industrial economy. Therefore, there are many ways and scopes to program, but why does a theoretical physicist program? We physicist formalize our understanding of the world in terms of equations. With computers we can compute the results of these calculation for a system that we want study. Doing so, we realize if our equations are a valid representation of the real world or not. To run these computations, we need to code (efficient) numerical programs, that can give us the answer in finite time, with finite resources.
 
-A scientist is a person which has a particular interest to quantitatively understand some areas of the universe. The practical objective of a scientist making use of computations, is to build his **code-base**. That is his own "tool-box", which he uses to study the universe. Depending on the physics that he wants to do, this can be more or less difficult, require more of less knowledge of computational machines, and being more or less crucial to his final goal to quantitative understand his favourite slice of universe. The best and most useful codes you shared with the community, and the world. Some of it is published in [Computer Physics Communication](https://www.journals.elsevier.com/computer-physics-communications), where a database of scientific codes since 1969 is available.
+A scientist is a person which has a particular interest to quantitatively understand some areas of the universe. The practical objective of a scientist making use of computations, is to build his **code-base**. That is his own "tool-box", which he uses to study the universe. Depending on the physics that one wants to do, this can be more or less complicated and hungry for resources, require more of less knowledge of computational machines. Most importantly, the obtained code-base could be more or less crucial to one's final goal to quantitative understand one's favourite slice of universe.
+
+The best and most useful codes are sometimes shared with the community, and the world. Some of these useful codes are published in [Computer Physics Communication](https://www.journals.elsevier.com/computer-physics-communications), where a database of scientific codes since 1969 is available. Others on personal website and code-sharing platform such as [github](www.github.com)
 
 Software engineering is the application of design and analysis principles to software production. This is a huge field, and most of the software engineering principles do not naively apply to computational software programmed by physicist, since our aims are very specific respect to the broad use of informatics in the information age.
-The old generation of theoretical physics community approached this field as per this quote by prominent computer scientist Dijikstra: _"software engineering has accepted as its charter "How to program if you cannot."_
+The old generation of theoretical physics community approached this field with the attitude represented by this quote by prominent computer scientist Edsger Dijkstra: _"software engineering has accepted as its charter "How to program if you cannot."_ Nonetheless, they programmed beautiful pieces of code.
 
 However, is indisputable that the choices you make in [organizing your work](https://en.wikipedia.org/wiki/Software_development_process) and the writing of the code, define the capability, efficiency and maintainability of the software itself. That is, the ability of your _code-base_ to study the universe. That is, the outcome of your work. Therefore, choose wisely.
 
@@ -101,41 +102,43 @@ However, is indisputable that the choices you make in [organizing your work](htt
 
 Wisely means that every decision should tend to optimize your present and future return on the time investment, and few principles of software engineering help in maximizing this returns. If I can boil it down to one lesson: always program so that the physics will be clear in the output, therefore usable across a framework that reflects your ideas for the field. Try to guarantee the [5R of scientific programming](https://www.frontiersin.org/articles/10.3389/fninf.2017.00069/full), that are:
 
-- re-runnable: the to code stuff has to be run over the years, not for a single instances. Container technology (e.g. docker) can help providing the correct environment for consistently re-runnable code.
+- re-runnable: the code has to be run over the years, not for single instances. However, over the years libraries and compiler version changes. Container technology (e.g. docker) can help providing the correct environment for consistently re-runnable code.
 - repeatable: the code has to give consistent results upon re-runs, otherwise it is not deterministic nor scientific.
 - reproducible: Provide enough comments/documentation so that any other party (including the you of 5 years into the future) can use the program and replicate the results without fail.
 - reusabile: the code can be used in different context, providing input to a third code or as routine.
-- replicable: the algorithms used within the code have to be well specified when you write it up or use it in a paper or a thesis. Provide enough details to make it possible to write the code again, eventually in a different language.
+- replicable: the algorithms used within the code have to be well specified when you write it up or use it in a paper or a thesis. Provide enough details to make it possible to write the code again, eventually in a different language, without accessing the original source code.
 
-[Design patterns](#Design Patterns) might help you to guarantee the reproducibilty and reusability of the code, so are good principles to study.
+[Design patterns](#Design Patterns) might help you to guarantee the reproducibilty and reusability of the code.
 
 ### Computer Science
 
-To prepare for scientific programming, is crucial to brush up on the fundamentals of computer science. Together with Latex, this is the other part is **not** optional for a theoretical physicist. The rest you _could_ wing it, or delegate (not that you _should_, or that is the most efficient, but depends on your scientific objective).
+To prepare for scientific programming, is crucial to brush up the fundamentals of computer science. Together with Latex, this is the other part is **not** optional for a theoretical physicist. The rest you _could_ wing it, or delegate (not that you _should_, or that is the most efficient, but depends on your scientific objective).
 
-Data types (arrays, lists, dictionaries ...), algorithms (bisection, hashtable, quicksort, graph traversal ...), numerical analysis (numerical derivatives, Gauss-Newton, trapezoid integration ...). You can find visualization visualizations of the most fundamental algorithms [here]((https://visualgo.net/en).
+A theoretical physicist needs working knowledge of most of these basic concepts pertaining to computer science and applied mathematics: Data types (arrays, lists, dictionaries, graphs ...), algorithms (bisection, hashtable, quicksort, graph traversal ...), numerical analysis (numerical derivatives, Gauss-Newton, trapezoid integration ...). You can find visualization visualizations of the most fundamental algorithms [here]((https://visualgo.net/en).
+If you plan to write functioning code, you need to exercise the implementation of these algorithms in specific [languages](#Languages), with particular care on the [numerical accuracy](#numerical-management)
 
 The ultimate source of wisdom are the Knuth volumes "The art of computer programming". Pass by my office if you want to borrow a copy. More introductory textbooks are:["Introduction to algorithms"](https://mitpress.mit.edu/books/introduction-algorithms-third-edition), ["a first course in numerical methods"](https://www.amazon.com/Numerical-Methods-Computational-Science-Engineering/dp/0898719976/ref=sr_1_1?ie=UTF8&qid=1535323350&sr=8-1&keywords=%22a+first+course+in+numerical+methods%22).
 
 ### Languages
 
-After the algorithm and the physics, the choice of language is the biggest design decision for the writing of a code. It will impact the future re-runnability, performance, and reusability within and outside of your code-base.
+After the focus on a physical system and the choice of algorithms needed to analyse this physics, the choice of language is the biggest design decision for the writing of a code. It will impact the future re-runnability, performance, and reusability within and outside of your code-base.
 
 This choice depends:
 
 - on the type of software you plan to do, and in general your are prone to do in your career
 - on knowledge and time constrains you have.
 - on availability of previous code and libraries.
+- on the general adoption by the community.
 
-A lot of nuclear physics is nowadays in the regime of high-performance computing, but there is a lot of physics to be done with pen-and-paper, or computationally trivial codes. This will impact the choice of language and [paradigm](https://en.wikipedia.org/wiki/Programming_paradigm). Most scientific numerical computing happens in imperative programming, where code lines consequentially change the machine state. This can be either procedural, that is based on subroutines/functions, or object-oriented.
+Nowadays, a lot of nuclear physics is in the regime of high-performance computing, but of course there is a lot of physics to be done with pen-and-paper, or computationally trivial procedural and single thread codes. The needs of the physics will impact the choice of language and [paradigm](https://en.wikipedia.org/wiki/Programming_paradigm). Most scientific numerical computing happens in imperative programming, where code lines consequentially change the machine state. This can be either procedural, that is based on subroutines/functions, or object-oriented.
 
 Only Fortran and C++ are fully supported in high performance computing, with direct embeddings in MPI, openMP and cuda. Therefore, the languages generally used in our subcommunity, and in my group:
 
-- [Fortran](https://en.wikipedia.org/wiki/Fortran): procedural. One of the first compiled languages, first appeared in 1957 is still going strong in the scientific community. Is very easy to learn, and to master, keeping you focus on what matters: the algorithms. [Hosphe](http://cpc.cs.qub.ac.uk/summaries/AEGK_v1_0.html) is written in this language, together with the most efficient linear algebra library, LAPACK (and its massive computing version, ScaLAPACK). [Tutorials](http://fortranwiki.org/fortran/show/Tutorials).
-- [C++](https://en.wikipedia.org/wiki/C%2B%2B): object-oriented++. First appeared in 1985 and constantly updated (C++17 being the last revision). Many modern codes are based on C++ (sometimes with bindings to Fortran, as in [BoccaDorata](http://personal.ph.surrey.ac.uk/~cb0023/bcdor/bcdor/Comp_Many-Body_Phys.html)). It is an extremely powerful and versatile language, with the potential to support every programming paradigm. Has the considerable advantage of defining objects with properties and overload operation (e.g. a wavefunction, with its over a basis and a definition of inner product).[Official Tutorial](http://www.cplusplus.com/doc/tutorial/), [List](https://hackr.io/tutorials/learn-c-plus-plus).
-- [python](https://en.wikipedia.org/wiki/Python_(programming_language)): object-oriented high level. Python is the "new" kid getting a lot of traction. It is an intuitive object oriented programming. In python everything is an object, everything is implicit, this makes python very versatile and easy to use. There is a wealth of libraries, for every scope. Important for us, and not as easily available in the other two languages, is visualization. [Official Tutorial](https://docs.python.org/3/tutorial/), [The hard way](https://learncodethehardway.org/python/).
+- [Fortran](https://en.wikipedia.org/wiki/Fortran): procedural. One of the first compiled languages. It first appeared in 1957 and it is still going strong in the scientific community with occasional feature additions. It is very easy to learn, and to master, keeping you focus on what matters: the algorithms and physics. [Hosphe](http://cpc.cs.qub.ac.uk/summaries/AEGK_v1_0.html) is written in this language, together with the most efficient linear algebra library, LAPACK (and its massive computing version, ScaLAPACK). [Tutorials](http://fortranwiki.org/fortran/show/Tutorials).
+- [C++](https://en.wikipedia.org/wiki/C%2B%2B): object-oriented++. First appeared in 1985 and constantly updated (C++17 being the last revision). Many modern codes are based on C++ (sometimes with bindings to Fortran, as in [BoccaDorata](http://personal.ph.surrey.ac.uk/~cb0023/bcdor/bcdor/Comp_Many-Body_Phys.html)). It is an extremely powerful and versatile language, with the potential to support every programming paradigm. Has the considerable advantage of defining objects with properties and overload operation (e.g. a wavefunction, with its over a basis and a definition of inner product). [Official Tutorial](http://www.cplusplus.com/doc/tutorial/), [List of tutorials](https://hackr.io/tutorials/learn-c-plus-plus).
+- [python](https://en.wikipedia.org/wiki/Python_(programming_language)): object-oriented high level. Python is the "new" kid getting a lot of traction. It is an intuitive object oriented programming. In python everything is an object, everything is implicit, this makes python very versatile and easy to use. There is a wealth of libraries, for every scope. Important for us, and not as easily available in the other two languages, is having libraries for plotting and visualization (cf. matplotlib). [Official Tutorial](https://docs.python.org/3/tutorial/), [The hard way](https://learncodethehardway.org/python/).
 
-An example of a complex computing application, can be a code that diagonalizes an Hamiltonian to obtain the eigenstates of a system. An instance of python could elaborate input, through a parser and reading, and outputs, writing on file and handling the [matplotlib visualization](#plotting-and-visualizing). This will call a C++ code, where classes define the wavefunctions, basis states...etc... that carries the actual physical content, while the diagonalization itself on a cluster is handled through Fortran and ScaLAPACK.
+An example of a complex computing application, can be a code that diagonalizes an Hamiltonian to obtain the eigenstates of a system. An instance of python could elaborate input and outputs, parsing the command line and reading input files, and writing on file and handling the [matplotlib visualization](#plotting-and-visualizing). This will call a C++ code, where classes define the wavefunctions, basis states...etc... that carries the actual physical content, while the diagonalization itself on a cluster is handled through Fortran and ScaLAPACK.
 
 Declarative languages deserve another chapter. These are languages where you specify the intent, and then the machine decides the order of computation based on the rule you set up. These are often used for things that don't concern numerical computing (e.g. javascript asynchronous programming, cornerstone of modern front-end web development). 
 
@@ -152,7 +155,7 @@ Number are saved in the machine in binary code, with a specific method in order 
 
 This is the domain of [floating point arithmetic](https://en.wikipedia.org/wiki/Floating-point_arithmetic). That is, the discretization of real numbers carries an error of precision and subtleties in the calculation that you should dominate.
 
-You can find more in an introductory book on computer science, or in more advanced books such as: _"Numerical Methods for scientist and engineers"_, Hamming, and_"The Art of Programming"_, Knuth, especially Chapter 4 of volume 2.
+You can find more in an introductory book on computer science, or in more advanced books such as: _"Numerical Methods for scientist and engineers"_, Hamming; _"The Art of Programming"_, Knuth, especially Chapter 4 of volume 2.
 
 ### Library use
 
@@ -177,23 +180,23 @@ Finally, Libraries are a staple of high performance computing, since the usage a
 ### High performance computing
 
 When the code is run on massively parallel machines, i.e. supercomputers, is called high performance computing. This is now a subfield of computer science, with plenty of strategy and methods to separate the computing load over different nodes of a cluster and over different processors.
-Basically the main difficulty and engineering choice in the development of a supercomputer code, is the strategy for sharing information between and within nodes of a cluster.
+Basically the main difficulty and engineering choice in the development of a supercomputer code, is the strategy for sharing information between and within nodes of a cluster considering the speed of communication between different levels of computation.
 
-Communicating between different geographical locations, is considerably slower than communicating within nodes of a dataserver (which use a special, and expensive, connection). 
-Communicating between nodes is considerably slower than communicating within a node. 
+The objective of a computational scientist is to program algorithms that exploit the potential of resources wasting as little time as possible on the bandwidth.
+Communicating between different geographical locations, is considerably slower than communicating within nodes of a dataserver (which use a special, and expensive, connection).
+Communicating between nodes is considerably slower than communicating within a node.
 Communicating between CPU and accelerator (GPU or Xeon Phi) is considerably slower than between CPU and memory.
-Finally, communicating between CPU and memory is considerably slower than between the cache and registry level of a CPU. 
-With this in mind, the objective of a computational scientist is to program algorithms that exploit the potential of resources wasting as little time as possible on the bandwidth.
+Finally, communicating between CPU and memory is considerably slower than between the cache and registry level of a CPU.
 
 To do so, the memory is divided into chunks, and different memory sharing paradigms are used in a calculation. In a Shared-nothing architecture, each computational node is independent and self-sufficient. To achieve so, the same information is redundantly dispersed in many computational units. On the contrary, in a shared-everything architecture memory is shared between units, and therefore the same information in the same location is broadcasted and used in the different units of computing.
 
-Embarrassing parallelization is the easiest form of parallelization and a form of shared-nothing architecture. It consist of running the same code, with different inputs, on different nodes of computing. The only thing needed for implementing this is a good use of [bash scripting](#bash-scripting) and eventually the queue system. 
+Embarrassing parallelization is the easiest form of parallelization and a form of shared-nothing architecture. It consist of running the same code, with different inputs, on different nodes of computing. The only thing needed for implementing this is appropriate input/output management, a  good use of [bash scripting](#bash-scripting), and eventually knowledge the queue system if the execution is on cluster.
 
 However, to share-_something_ in a computation, one has to send messages to and from different processes and employ a more sophisticated approach. To help managing the processing and memory load for a parallel computation, we use several libraries:
 
-- [MPI](https://en.wikipedia.org/wiki/Message_Passing_Interface): is a protocol of information exchange between shared-nothing nodes, making them less egoist since they now exchange what you explicitly declare. This information exchange is fundamental to run codes on different computing nodes and enables exploiting not only larger processing resources, but also larger memory availability in the sum of the different nodes. However, the shared information will be duplicated. An MPI call spawns several *processes*, that are isolated computational units. Therefore, an MPI program running on a single machine, will have less memory available for the computation in each process. e.g. 16 MPI processes on a 16 core, 128GB memory machine, will generate 1 process per core, with 8 GB of memory each. [Tutorial](https://computing.llnl.gov/tutorials/mpi/).
-- [openMP](https://www.openmp.org/): openMP works on a shared-everything architecture. Therefore it is ideal to be run on a single machine. openMP will spawn several *threads* for a single process that can read the whole memory available. [Tutorial](https://computing.llnl.gov/tutorials/openMP/). *Note*: C++11 and Fortran2003 contain *vectorization* options, that parallelize the code as a naive implementation of openMP would do.
-- openCL/[openACC](https://en.wikipedia.org/wiki/OpenACC): is an open protocol for parallelization through accelerators. That is additional cards that are included in a computer and have additional (and usually very efficient and abundant and characterized by a high degree of parallelization) processing capability. Today, mostly of these are Graphic Cards, that can be used for efficient computation. [Tutorial](https://www.openacc.org/get-started). Note: consumer graphic cards (Nvidia GeForce, ATI Radeon...) allow for single precision computations, professional and computing dedicated graphic chips (NVidia Quadro and Tesla) are needed for double precision.
+- [MPI](https://en.wikipedia.org/wiki/Message_Passing_Interface): is a protocol of information exchange between shared-nothing nodes, making them less egoist since they now exchange what you explicitly declare. This information exchange is fundamental to run codes on different computing nodes and enables exploiting not only larger processing resources, but also larger memory availability coming from the sum of the different nodes. However, the shared information will be duplicated. An MPI call spawns several *processes*, that are isolated computational units. Therefore, an MPI program running on a single machine, will have less memory available for the computation in each process. e.g. 16 MPI processes on a 16 core, 128GB memory machine, will generate 1 process per core, with 8 GB of memory each. [Tutorial](https://computing.llnl.gov/tutorials/mpi/).
+- [openMP](https://www.openmp.org/): openMP works on a shared-everything architecture. Therefore it is ideal to be run on a single machine. openMP will spawn several *threads* for a single process that can read the whole memory available to the program. [Tutorial](https://computing.llnl.gov/tutorials/openMP/). *Note*: C++11 and Fortran2003 contain *vectorization* options, that parallelize the code as a basic implementation of openMP would do.
+- openCL/[openACC](https://en.wikipedia.org/wiki/OpenACC): is an open protocol for parallelization through accelerators. That is additional cards that are included in a computer and have additional (and usually very efficient and abundant and characterized by a high degree of parallelization) processing capability. Today, mostly of these are Graphic Cards, that can be used for efficient computation. [Tutorial](https://www.openacc.org/get-started). Note: consumer graphic cards (Nvidia GeForce, ATI Radeon...) allow for single precision computations, professional and computing dedicated graphic chips (NVidia Quadro and Tesla) use double precision.
 - [Cuda](https://developer.nvidia.com/cuda-zone): is the proprietary Nvidia language for implementing computing in its accelerators. It is the de-facto standard in accelerated application. [Tutorial](https://developer.nvidia.com/how-to-cuda-c-cpp).
 
 These libraries are native in Fortran, C and C++. However, they can be ported to or embedded in other languages. This carries an overhead cost, that might be deadly or irrelevant depending on the implementation.
@@ -202,15 +205,15 @@ For more information, see e.g. [introduction to HPC](https://hpc-carpentry.githu
 
 ### Design Patterns
 
-This is a relatively advanced topic in software engineering. You should practice the other aspects before perfecting this one. The main issue in object oriented programming is to guide the flow of information in development. Objects are "too" versatile and there is a big risk of misusing the freedom given in object oriented languages, transforming development to a resolution of ["dependencies hell"](https://en.wikipedia.org/wiki/Dependency_hell).
+This is a relatively advanced topic in software engineering. You should practice the other aspects before perfecting this one. The main issue in object oriented programming is to guide the flow of information in development. Objects are "too versatile" and there is a big risk of misusing the freedom given in object oriented languages, transforming development to a micro-management resolution of ["dependencies hell"](https://en.wikipedia.org/wiki/Dependency_hell).
 
-A good principle is the one of [GRASP](https://en.wikipedia.org/wiki/GRASP_(object-oriented_design)). It is based on the "information expert": each class has to be constructed to be responsible of a certain element of the calculation, which has to be simple as possible, and have all the ingredient to compute it. In this way you reduce the coupling between elements and increase the cohesion within an element.
+A good principle is the one of [GRASP](https://en.wikipedia.org/wiki/GRASP_(object-oriented_design)). It is based on the "information expert": each class has to be constructed to be responsible of a certain element of the calculation and have all the ingredient to compute it. The key is to have this element of calculation as simple as possible, but complete. In this way you reduce the coupling between elements and increase the cohesion within an element.
 
-[Design patterns](https://en.wikipedia.org/wiki/Software_design_pattern) is a term introduced in the famous book "Design Patterns: Elements of Reusable Object-Oriented Software". The authors are amicably called "Gang of Four" (GoF).
+[Design patterns](https://en.wikipedia.org/wiki/Software_design_pattern) is a term introduced in the famous book "Design Patterns: Elements of Reusable Object-Oriented Software". The four authors are amicably called "Gang of Four" (GoF).
 Design patterns are typical structures that get often repeated in code architecture of object-oriented software.
-They are part effective recipes part community standards. That, their use helps boil down a code in elements with defined behaviour, that other programmer can recognize and use to understand your design.
+They are part effective recipes part community standards. Their use helps boil down a code in elements with defined behaviour, that other programmers can recognize and use to understand your design.
 
-Moreover, I don't find most of the patterns useful in scientific calculations. However, might be convenient to learn:
+The number of possible patterns is very large, e.g. there are dozens of different methods to initialize an object. Personally, I don't find most of the patterns useful in scientific calculations. However, few of those are staple to reasoning schemes and many use-cases, and therefore might be useful to learn:
 
 - Builder and Factory method, to initialize your objects.
 - Adapter and Decorator, to distribute information within the objects.
@@ -221,7 +224,7 @@ Moreover, I don't find most of the patterns useful in scientific calculations. H
 
 [Software carpentry](https://software-carpentry.org) is the put in practice the principles of engineering. That is, the art of making the machine purring at your tune. This makes you a more effective developer, saving precious time by the skills and automatisms perfected over the years. Carpentry is not about high level *decisions*, but on low level *execution*.
 
-If engineering is (almost) a science, carpentry is an art. As such it is very particular to your own way of understanding and working. Nobody is in the position to tell you how you should work, but I provide some suggestions and context to some approaches you can use and what tools are most used by the theoretical physics community.
+If engineering is (almost) a science, carpentry is an art. As such it is very particular to your own way of understanding and working. Nobody is in the position to tell you how you should work, but I provide some suggestions and context to some approaches you can use, and what tools are most used by the theoretical physics community.
 
 ### OS
 
@@ -229,7 +232,7 @@ The operative system is a crucial part of your working environment, since it is 
 
 Due to the development constrains of numerical and high performance software, a [terminal](#terminal) must be integral part of a scientific development environment. Linux is what is used by most theoretical physics departments as provided workstations, and by practically all of modern supercomputers. So, most probably you will have contact with Linux machines sooner or later.
 
-OSX, the operative system of Apple Mac machines, is based on Unix and BSD and therefore shares a lot of similarities with Linux. But maintains the perks of a commercially managed product. Good internet browsing, decent compatibility with Microsoft office, and has an handy pdf editor included. For these reasons is the favourite of many scientists, even though I personally prefer Linux and I find OSX the less reliable of the 3 systems. 
+OSX, the operative system of Apple Mac machines, is based on Unix and BSD and therefore shares a lot of similarities with Linux. But maintains the perks of a commercially managed product. Good internet browsing, decent compatibility with Microsoft office, and has an handy pdf editor included. For these reasons is the favourite of many scientists, even though I personally prefer Linux and I find OSX the least reliable of the 3 systems.
 In the case you plan to use OSX, be sure that the terminal emulator you use is setted on "bash", and install [`brew`](https://brew.sh/) to manage the installation and management of development packages.
 
 Windows, is not quite as proficient with scientific computing and development as the other two competitor. I heartily discourage to use as a development platform, and you will have to learn the Linux terminal in any case if you run simulations on department workstation and supercomputers. Even though today Windows 10 now includes a full Linux subsystem and related terminal it might be tricky to make [IDE](#ide) work in that environment. That said, the advantages in browsing and office productivity cannot be understated. Windows has been my system of choice for years, together with a VMware virtual machine running Linux.
@@ -243,25 +246,25 @@ The terminal runs on textual commands. A command does an action on your system, 
 
 In supercomputers the queue systems regulate who has access to computational resources in a given moment. You have to study the specific system that the supercomputer uses, but is always in form of terminal commands. A particularly useful and under appreciated command when running calculation remotely is `nohup`. It disconnects a process from the terminal on which is run, enabling you to close the connection while the calculation continues to go on.
 
-Furthermore, the terminal enables a totally personalized and versatile use of your system. Do you want to copy only the files with "out" name, both uppercase and lowercase, a number, and a ".dat" extension? Yes can do: `cp *{OUT,out}*[0-9]*.dat ./directory/`. Imagine that the files are up to GB each, and few thousands... you cannot afford the space to copy everything, neither the time to copy things one by one. Terminal to the rescue! 
+Furthermore, the terminal enables a totally personalized and the most versatile use of your system. Do you want to copy only the files with "out" name, both uppercase and lowercase, a number, and a ".dat" extension? Yes can do: `cp *{OUT,out}*[0-9]*.dat ./directory/`. Imagine having few thousands files up to GB each... you cannot afford the space to copy useless files, neither the time to copy things one by one. Terminal to the rescue!
 
 **Love the shell**. You can start having fun modifying the `.bashrc` file in the home. It is a bash script, a list of terminal commands, that is run at each terminal start.
 
 ### bash scripting
 
 Bash scripting is concatenating one command after the other in a scripting file, so that the commands are run sequentially.
-It is an extremely important tool, that enable, for example, to run several codes in several directories and collect the output in a single file. [Tutorial](https://linuxconfig.org/bash-scripting-tutorial-for-beginners).
+It is an extremely important tool that enables, for example, to run several codes in several directories and collect the output in a single file. [Tutorial](https://linuxconfig.org/bash-scripting-tutorial-for-beginners).
 
 Scripting is fundamental for your work as a physicist. Sooner or later you will have to fine-tune your calculation and answer technical, but important, questions such as: is the simulation converged in this space? To do so you have to run several calculations, with different spaces, and see if the quantity you want to simulate is the same over a certain threshold.
-You can do it by hand, and running the calculations one by one. But way more comfortable and efficient to just setup a script that runs everything at a touch of a command, and then checking the results after all the calculations are done.
+You can do it by hand, and running the calculations one by one. But way more comfortable and efficient to just setup a script that runs everything at a touch of a single command, and then checking the results after all the calculations are done.
 
-Bash script, being a concatenation of several commands, is ideally suited for this role. But almost all languages have the possibility of running command lines, therefore can be used as scripting language. You can use different languages to script, according to how complex and computationally intensive one task is, but usually the simpler the better. 
+Bash script, being a concatenation of several commands, is ideally suited for this role. But almost all languages have the possibility of running command lines, therefore can be used as scripting language. You can use different languages to script, according to how complex and computationally intensive one task is, but usually the simpler the better.
 Bash does the job. You can use Python if you need more flexibility and if you plan to use control cycles (if, loops ...) or plotting results.
 
 ### `vim` vs `emacs`
 
-Because of the extensive use of the terminal, sometimes in remote instances, you will be in the situation where you will like to edit a file without resorting to graphical interface. For this, it will be crucial to learn a text editor that works directly on the shell. The two most popular and advanced alternatives are `vim` and `emacs`. Both are extremely powerful, probably are still the most advanced IDE and editor around.
-The two editors have haters and lovers, famously fuelling a feud that runs rampant involving generations of scientist. 
+Because of the extensive use of the terminal, sometimes in remote instances, you will be in the situation where you will like to edit a file without resorting to graphical interface. For this, it will be crucial to learn a text editor that works directly on the shell. The two most popular and advanced alternatives are `vim` and `emacs`. Both are extremely powerful, probably are still the most advanced IDE and editors around.
+The two editors have haters and lovers, famously fuelling a feud that runs rampant involving generations of scientists.
 
 My view is that `vim` is more of an editor. You enter when you want to change some text, you exit to compile the code and run it (even though it can be done within `vim`). `emacs` is more of an IDE, where you can do absolutely everything and with enough proficiency could practically substitute the whole terminal. It is even programmable with LUA, guaranteeing absolute personalization.
 
@@ -287,11 +290,11 @@ Version (out of) control is that. A version control system makes sure that track
 
 This is way more powerful than simply keeping the old files, because:
 
-1. You can generate way more versions than copy of files.
+1. You can generate way more versions than copy of files. You will have an efficient use of space in your brain and in your disk.
 2. This enables you to do more meaningful comparison, try quicker new things, and see what works and what doesn't.
-3. You can tag the version with appropriate descriptions and comments, not only filenames or (if you are very clever, comments in the file).
+3. You can tag the version with appropriate descriptions and comments, not only filenames or (if you are very clever, comments inside the file).
 4. There are different levels and granularity for the comments:
-    - tags: for stable, progressive, versions (0, 1.0, 1.1 ...);
+    - tags: for stable, progressive, versions (0.1, 1.0, 1.1 ...);
     - branches: for different, eventually parallel, branches and stages of development (a, b, with_appendix);
     - releases: for versions which are shared (advisor, printed, online).
 5. Makes it way easier to collaborate, especially over remote repositories hosting services, such as [github](www.github.com).
@@ -299,8 +302,9 @@ This is way more powerful than simply keeping the old files, because:
 
 There are different version control systems, but the most used in physics is [git](https://homes.cs.washington.edu/~mernst/advice/version-control.html) (jk, the most used is the file naming madness, but git comes just after that).
 
-I suggest students to make a [github student developer account](https://education.github.com/pack), is free, is simple, and you will have private repository while you study. An alternative, if you don't have to work with me, is of course [gitlab](gitlab.com). 
+I suggest students to make a [github student developer account](https://education.github.com/pack), is free, is simple, and you will have private repository while you study and few years after that. An alternative, is of course [gitlab](gitlab.com).
 However, I find the github community larger and more active. I have a [github account](https://github.com/AndreaIdini), and an active little [outreach group](https://github.com/Scienza). Repository hosts, such as github, often include several features to help with collaborative development: issue tracking, project management and statistics just to name a few.
+If you collabroate with me and/or within the matfys division, an internal gitlab server has been set up at watto(.matfys.th.se). Subscribe with your academic email, but be mindful about space. Don't upload large output files (avoid MB).
 
 Another important modern tool for collaboration, especially to report to your advisors (especially when the advisor is me) are notebooks. Taking the name and inspiration from mathematica's notebook interface, they are documents able to run code within the document itself.
 
@@ -313,7 +317,7 @@ You can use vim or emacs and live happily forever (especially emacs is very comp
 
 These modern editors are much more than a notebook under steroids, but include several useful features. From code folding and refactoring, to live visualization of notebooks. Most importantly, graphical debugging.
 
-You should find the editor/IDE that keeps you more focused, and quicker (that usually means pressing the least number of buttons and looking up less time as possible a cheatsheet). If that means something old, or very simple, or very flashy and frowned upon in the serious-ish world of theoretical physics.
+You should find the editor/IDE that keeps you more focused, and developing quicker (that usually means pressing the least number of buttons and looking up a cheatsheet less time as possible). Doesn't matter if that means something old, or very simple, or very flashy and frowned upon in the serious-ish world of theoretical physics.
 However, there are not that many editors that properly support Fortran and are multiplatform:
 
 - **Eclipse** a huge editor, with a new initiative dedicated to [scientific computing](http://www.eclipse.org/downloads/packages/release/photon/rc2/eclipse-ide-scientific-computing). Is one of the few (and probably the best) development environment for parallel computing.
@@ -323,7 +327,7 @@ However, there are not that many editors that properly support Fortran and are m
 
 ### Debugger
 
-Sooner or later you will have to learn how to debug a code, that it to understand what is wrong with it. Why it crashes or give unexpected results. The (extremely) old fashioned (but popular) way is to insert lines of writing variables. Is effective, but rarely as much as a well-setted debugger.
+Sooner or later you will have to learn how to debug a code, that it to understand what is wrong with it. Why it crashes or give unexpected results. The (extremely) old fashioned (but popular and sometimes convenient) way is to insert lines in the code writing variables. Is effective, but rarely as much as a well-setted debugger.
 
 Debuggers do not need to printout anything particular and pre-setted, because they register the whole status of the machine. That is, you can see every variable defined in the code up to a _breaking point_ line.
 
@@ -338,10 +342,12 @@ Other notable debuggers and analysis tools:
 - [gprof](https://sourceware.org/binutils/docs/gprof/): a basic profiler you should learn to use.
 - [vampir](www.vampir.eu): profiler for parallel calculations
 - [valgrind](http://valgrind.org): a very complete debugger and analysis tool. Especially proficient to analyse memory and find memory leaks.
-- [sonarqube](https://www.sonarqube.org): a professional and proprietary tool, now industry standard.
+- [sonarqube](https://www.sonarqube.org): a professional and proprietary tool for code analysis, quite industry standard.
 
 ## Other resources
 
 - [Joel test](https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/)
 - [Competency Matrix](http://sijinjoseph.com/programmer-competency-matrix/)
 - Gamified Learning: [Hackerrank](https://www.hackerrank.com), [Code Academy](https://www.codecademy.com), [Enki](https://www.enki.com).
+- [Huge list of free courses](https://medium.freecodecamp.org/438-free-online-programming-computer-science-courses-you-can-start-in-may-aa316e4195fc).
+- [Project Euler](https://projecteuler.net), challenging mathematical/computer science problems.
