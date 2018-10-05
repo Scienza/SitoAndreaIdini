@@ -6,10 +6,10 @@ tags: ["Meta", "Carpentry"]
 categories: ["Tools"]
 background: "/img/terminal.png"
 subtitles: "Modern tools to be a theoretical physicist"
-# summary: "This post wants to provide a good list of the tools of the trade you need to work as a theoretical physicist with a computation focus, i.e. in my group."
+summary: "This post wants to provide a good list of the tools of the trade you need to work as a theoretical physicist with a computation focus, i.e. in my group.
+*If I had five minutes to chop down a tree, I’d spend the first three sharpening my axe*"
 ---
-> > _If I had five minutes to chop down a tree, I’d spend the first three sharpening my axe.
-
+> > _If I had five minutes to chop down a tree, I’d spend the first three sharpening my axe._
 
 # Theoretical Physics and computers
 
