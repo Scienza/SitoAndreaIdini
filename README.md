@@ -32,7 +32,7 @@ Hugo usees some variables for each project, to customize the page.
 | `title` | This is title of the article. If differs from the file name because the file name indicated the URL of the project, the `title` indicates the title of the article. |
 | `date` | This is the date of publication of the article. If you create the article via the Hugo CLI, this value is setted to the time of generation of the file |
 | `draft` | If the project is a draft, it will not be included when exporting the website. |
-| `background` | This is the main background of the project. It can be both be a link (eg. `https://vgy.me/YQTFas.png`) or link to a local file (eg. `/assets/img/placeholders/pic27.jpg`) |
+| `background` | This is the main background of the project. It can be both be a link (eg. `https://i.vgy.me/YQTFas.png`) or link to a local file (eg. `/assets/img/placeholders/pic27.jpg`) |
 | `subtitle` | This is the subtitle of the article |
 
 ## Inserting external html files
@@ -67,13 +67,13 @@ You can find more info in the [Hugo documentation website](https://gohugo.io/doc
 ### Editing the texts in the index page
 The index of the website is located in the folder `themes/Idini/layouts/index.html` and it's just a mixture of the partials html files located in `themes/Idini/layouts/partials/index`  
 Ideally (having a HTML-compatible editor, like [Visual Studio Code](https://code.visualstudio.com/)), to edit the texts it's enought to edit the "white" texts as shown in the image below:  
-![](https://vgy.me/YQTFas.png)  
+![](https://i.vgy.me/YQTFas.png)  
 
 ### Editing the animations
 The website uses a JavaScript library called [Animate on scroll](https://github.com/michalsnik/aos) (AOS for the friens) to display some animations when the user scrolls the page.  
 This JavaScript library is based on HTML attributes in the nodes.  
 For example, the animation type and duration are determined respectively from the attributes `data-aos` and `data-aos-duration` (see the image below):  
-![AOS attributes](https://vgy.me/cSvliU.png)  
+![AOS attributes](https://i.vgy.me/cSvliU.png)  
   
 #### Disclamer: this won't be a guide about the AOS library, so I'm just keeping it simple.
 As you can see, not all the attributes are present in both the nodes (exept the `data-aos` attribute).  
@@ -95,7 +95,7 @@ So if you want to edit or change an animation, you just need to change the attri
 
 ### Changing the "About me" picture
 At the moment of downloading of the template, a simple placeholder (from [placeimg](https://placeimg.com)) image is used in the "About me" action:  
-![About me ](https://vgy.me/tIYXkM.png)  
+![About me ](https://i.vgy.me/tIYXkM.png)  
 (The placeimg site is used also to add some loading time and permit to check the perloader animation) (*coff coff* It's a feature, not a bug *coff coff*)  
 You can change the image by editing the `url` in the `background-image` prop in the `style` attribute in the about partial template (#KIS):
 ```
@@ -107,14 +107,14 @@ IN THIS  -->   style="background-image: url('https://placeimg.com/480/640/any');
 ### Changing the "Get in touch" icons
 I used [Font Awesome](https://fontawesome.com/) to provide the icons to the website.  
 In this moment the "Get in touch" section looks like that:  
-![Get in touch icons](https://vgy.me/K0WNtS.png)  
+![Get in touch icons](https://i.vgy.me/K0WNtS.png)  
 
 The raccomended number of accounts to contact is 4, not less, so your audience can have multiple channels to talk with you.  
 If you put less than 4 items, the CSS will fuck up (*coff coff* It's a feature, not a bug *coff coff*)  
 
 To change the icon you need to search an image in the [Font Awesome Website](https://fontawesome.com/icons?d=gallery) by using the search function.  
 Once you selected an icon, you just need to copy the code you find under the icon:  
-![](https://vgy.me/bNG2rB.png)  
+![](https://i.vgy.me/bNG2rB.png)  
 And paste it in the HTML row corresponding to the item you want to edit, for example in the below picture you can see a before and a after (note the code underlined in white):  
 ![](https://vgy.me/hFFQN6.png)
 
