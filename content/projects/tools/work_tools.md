@@ -23,26 +23,26 @@ However, this list has a more down-to-earth approach on providing a pragmatical 
 Is not possible to expect that every item here explained is crossed and mastered, this has the spirit of a wishlist, for myself included. It provides a (hopefully) useful canvas to follow and building up from.
 
 - [Theoretical Physics and computers](#theoretical-physics-and-computers)
-    - [Editorial](#editorial)
-        - [Latex](#latex)
-        - [Plotting and visualizing](#plotting-and-visualizing)
-    - [Software Engineering for scientists](#software-engineering-for-scientists)
-        - [A good scientific program](#a-good-scientific-program)
-        - [Computer Science](#computer-science)
-        - [Languages](#languages)
-        - [Numerical management](#numerical-management)
-        - [Library use](#library-use)
-        - [High performance computing](#high-performance-computing)
-        - [Design Patterns](#design-patterns)
-    - [Software Carpentry](#software-carpentry)
-        - [OS](#os)
-        - [Terminal](#terminal)
-        - [bash scripting](#bash-scripting)
-        - [`vim` vs `emacs`](#vim-vs-emacs)
-        - [Version Control and collaboration](#version-control-and-collaboration)
-        - [Modern IDE](#modern-ide)
-        - [Debugger](#debugger)
-    - [Other resources](#other-resources)
+  - [Editorial](#editorial)
+    - [Latex](#latex)
+    - [Plotting and visualizing](#plotting-and-visualizing)
+  - [Software Engineering for scientists](#software-engineering-for-scientists)
+    - [A good scientific program](#a-good-scientific-program)
+    - [Computer Science](#computer-science)
+    - [Languages](#languages)
+    - [Numerical management](#numerical-management)
+    - [Library use](#library-use)
+    - [High performance computing](#high-performance-computing)
+    - [Design Patterns](#design-patterns)
+  - [Software Carpentry](#software-carpentry)
+    - [OS](#os)
+    - [Terminal](#terminal)
+    - [bash scripting](#bash-scripting)
+    - [`vim` vs `emacs`](#vim-vs-emacs)
+    - [Version Control and collaboration](#version-control-and-collaboration)
+    - [Modern IDE](#modern-ide)
+    - [Debugger](#debugger)
+  - [Other resources](#other-resources)
 
 ## Editorial
 
@@ -114,7 +114,7 @@ Wisely means that every decision should tend to optimize your present and future
 
 To prepare for scientific programming, is crucial to brush up the fundamentals of computer science. Together with Latex, this is the other part is **not** optional for a theoretical physicist. The rest you _could_ wing it, or delegate (not that you _should_, or that is the most efficient, but depends on your scientific objective).
 
-A theoretical physicist needs working knowledge of most of these basic concepts pertaining to computer science and applied mathematics: Data types (arrays, lists, dictionaries, graphs ...), algorithms (bisection, hashtable, quicksort, graph traversal ...), numerical analysis (numerical derivatives, Gauss-Newton, trapezoid integration ...). You can find visualization visualizations of the most fundamental algorithms [here]((https://visualgo.net/en).
+A theoretical physicist needs working knowledge of most of these basic concepts pertaining to computer science and applied mathematics: Data types (arrays, lists, dictionaries, graphs ...), algorithms (bisection, hashtable, quicksort, graph traversal ...), numerical analysis (numerical derivatives, Gauss-Newton, trapezoid integration ...). You can find visualization visualizations of the most fundamental algorithms [here](https://visualgo.net/en).
 If you plan to write functioning code, you need to exercise the implementation of these algorithms in specific [languages](#Languages), with particular care on the [numerical accuracy](#numerical-management)
 
 The ultimate source of wisdom are the Knuth volumes "The art of computer programming". Pass by my office if you want to borrow a copy. More introductory textbooks are:["Introduction to algorithms"](https://mitpress.mit.edu/books/introduction-algorithms-third-edition), ["a first course in numerical methods"](https://www.amazon.com/Numerical-Methods-Computational-Science-Engineering/dp/0898719976/ref=sr_1_1?ie=UTF8&qid=1535323350&sr=8-1&keywords=%22a+first+course+in+numerical+methods%22).
@@ -140,7 +140,7 @@ Only Fortran and C++ are fully supported in high performance computing, with dir
 
 An example of a complex computing application, can be a code that diagonalizes an Hamiltonian to obtain the eigenstates of a system. An instance of python could elaborate input and outputs, parsing the command line and reading input files, and writing on file and handling the [matplotlib visualization](#plotting-and-visualizing). This will call a C++ code, where classes define the wavefunctions, basis states...etc... that carries the actual physical content, while the diagonalization itself on a cluster is handled through Fortran and ScaLAPACK.
 
-Declarative languages deserve another chapter. These are languages where you specify the intent, and then the machine decides the order of computation based on the rule you set up. These are often used for things that don't concern numerical computing (e.g. javascript asynchronous programming, cornerstone of modern front-end web development). 
+Declarative languages deserve another chapter. These are languages where you specify the intent, and then the machine decides the order of computation based on the rule you set up. These are often used for things that don't concern numerical computing (e.g. javascript asynchronous programming, cornerstone of modern front-end web development).
 
 However, there are a number of paradigms which are very effective in science, even though not always for numerical computing.
 
