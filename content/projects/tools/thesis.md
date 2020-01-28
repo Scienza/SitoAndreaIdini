@@ -1,12 +1,12 @@
 ---
-title: "Thesis"
-date: 2020-01-10T13:43:37+01:00
-draft: true
+title: "How to write a thesis in theoretical physics"
+# date: 2020-01-10T13:43:37+01:00
+date: 2018-05-06T17:12:42+02:00
+draft: false
 tags: ["Meta", "Carpentry"]
 categories: ["Tools"]
 # Link to a background image
 background: "/img/terminal.png"
-subtitle: "How to write a thesis in theoretical physics"
 summary: "You visited an advisor and got a topic to work on in theoretical physics, congratulations! Now what?"
 ---
 
@@ -88,7 +88,7 @@ Sometimes people use Mendeley, but I don't feel endorsing bibliographic options 
 
 ## Working
 
-[Easy work](./matrix.gif)
+<iframe width="50%" src="../matrix.gif" frameborder="0" allowfullscreen></iframe>
 
 This will probably be your first experience in original scientific work. Arguably, your objectives shoud be:
 
@@ -118,7 +118,7 @@ It is good practice to use git as versioning system (not anymore v1, v2) and whe
 The tone and language of the thesis have to be gauged according the objective and the audience. The audience are your examiners, and your fellow students. You have to write for prospective students that need to understand the scientific context, have a good bibliography to start from, and a report of your results useful to reproduce and continue your work.
 Even more than usual, write only what you really _know_ to be correct. Typos happen. Imprecise concepts, incorrect statements, wrong equations, will not help your reader, and therefore you.
 
-![Be always technically correct](./technically.gif)
+<iframe width="480px" height="360px" src="../technically.gif" frameborder="0" scrolling='no' allowfullscreen></iframe>
 
 Scientific writing have to be crisp and precise. Use short and clear phrases. Keep the grammar simple and exact. Choose your words precisely. The objective is first and foremost a dry, **correct**, and objective account of your research and results.
 
@@ -244,4 +244,4 @@ In this case, your supervisor will guide you very closely. It is good practice t
 
 This concludes this guide. Don't hesitate to contact me for more explanation and suggest modification. Congrats! You deserve a Seal of approval to have arrived here!
 
-![Seal of approval](./seal.gif)
+<iframe width="250px" height="180px" src="../seal.gif" frameborder="0" scrolling='no' allowfullscreen></iframe>
