@@ -88,7 +88,7 @@ Sometimes people use Mendeley, but I don't feel endorsing bibliographic options 
 
 ## Working
 
-[Easy work](./working.gif)
+[Easy work](./matrix.gif)
 
 This will probably be your first experience in original scientific work. Arguably, your objectives shoud be:
 
